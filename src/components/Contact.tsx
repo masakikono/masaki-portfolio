@@ -13,9 +13,9 @@ const Contact = () => {
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    
+
     // Web3Formsの設定: ここにアクセスキーを入れます
-    data.access_key = "YOUR_ACCESS_KEY_HERE";
+    data.access_key = "646f0c34-5ad7-4099-9f17-90c6ee056b52";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-12">
       <h2 className="text-sm md:text-base font-medium mb-16 tracking-[0.3em] uppercase text-muted">{t.contact.title}</h2>
-      
+
       <div className="w-full max-w-lg">
         {status === "success" ? (
           <div className="p-8 border border-border bg-background rounded-sm text-foreground space-y-4">
@@ -61,8 +61,8 @@ const Contact = () => {
               <label htmlFor="message" className="block text-xs uppercase tracking-widest text-[#8892B0] mb-2">Message</label>
               <textarea id="message" name="message" rows={5} required className="w-full bg-transparent border-b border-[#172A45] py-2 text-foreground focus:outline-none focus:border-[#8892B0] transition-colors font-light resize-none"></textarea>
             </div>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={status === "submitting"}
               className="mt-8 border border-[#172A45] px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-50 mx-auto w-full md:w-auto"
             >
