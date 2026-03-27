@@ -17,11 +17,11 @@ export const translations = {
     },
     work: {
       title: "WORK & CAREER",
-      content: "これまでの経歴や実績のプレースホルダー（Coming soon...）"
+      content: "Coming soon..."
     },
     contact: {
       title: "CONTACT",
-      content: "お問い合わせ用のフォーム、または連絡先情報（Coming soon...）"
+      content: "Coming soon..."
     },
     footer: {
       builtWith: "Designed & Built with AI"
@@ -45,11 +45,11 @@ export const translations = {
     },
     work: {
       title: "WORK & CAREER",
-      content: "Work history and achievements placeholder (Coming soon...)"
+      content: "Coming soon..."
     },
     contact: {
       title: "CONTACT",
-      content: "Contact form or details placeholder (Coming soon...)"
+      content: "Coming soon..."
     },
     footer: {
       builtWith: "Designed & Built with AI"
