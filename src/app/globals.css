@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --muted: #a3a3a3;
-  --border: #262626;
+  --background: #080D1A;
+  --foreground: #F8FAFC;
+  --muted: #64748B;
+  --border: #1E293B;
 }
 
 @theme inline {
@@ -23,6 +23,10 @@ body {
   /* Improve typography rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom Utilities for Masonry */
