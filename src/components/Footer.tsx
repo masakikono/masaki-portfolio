@@ -17,11 +17,11 @@ const Footer = () => {
     <footer className="py-12 border-t border-border mt-24">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center space-y-6">
         <div className="flex space-x-6 text-muted">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+          <a href="https://www.instagram.com/masaki_kono_3.0/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
             <InstagramIcon className="w-5 h-5" />
             <span className="sr-only">Instagram</span>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+          <a href="https://www.linkedin.com/in/masakikono19931015/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
             <LinkedInIcon className="w-5 h-5" />
             <span className="sr-only">LinkedIn</span>
           </a>
