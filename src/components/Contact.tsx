@@ -14,8 +14,7 @@ const Contact = () => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
 
-    // Web3Formsの設定: ここにアクセスキーを入れます
-    data.access_key = "646f0c34-5ad7-4099-9f17-90c6ee056b52";
+    data.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string;
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
