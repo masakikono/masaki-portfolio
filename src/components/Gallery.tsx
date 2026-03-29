@@ -5,12 +5,12 @@ import Image from "next/image";
 import Masonry from "react-masonry-css";
 
 const MOCK_IMAGES = [
-  { id: 1, src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf", alt: "Coffee Setup", width: 600, height: 800 },
-  { id: 2, src: "https://images.unsplash.com/photo-1444418185997-1145401101e0", alt: "Nature/Travel", width: 600, height: 400 },
-  { id: 3, src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", alt: "Coffee Beans", width: 600, height: 600 },
-  { id: 4, src: "https://images.unsplash.com/photo-1511920170033-f8396924c348", alt: "Barista Work", width: 600, height: 900 },
-  { id: 5, src: "https://images.unsplash.com/photo-1481833761820-0509d3217039", alt: "Pour Over", width: 600, height: 400 },
-  { id: 6, src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", alt: "Coffee Beans Alternative", width: 600, height: 800 },
+  { id: 1, src: "/images/laughing-outdoors.jpg", alt: "Masaki laughing outdoors", width: 600, height: 800 },
+  { id: 2, src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf", alt: "Coffee dummy 1", width: 600, height: 450 },
+  { id: 3, src: "/images/blue-lagoon-drink.jpg", alt: "Blue lagoon lagoon drink", width: 600, height: 600 },
+  { id: 4, src: "https://images.unsplash.com/photo-1495474472201-1b0337f71ab4", alt: "Coffee dummy 2", width: 600, height: 800 },
+  { id: 5, src: "/images/blue-lagoon-sign.jpg", alt: "Blue lagoon sign", width: 600, height: 450 },
+  { id: 6, src: "https://images.unsplash.com/photo-1511920170033-f8396924c348", alt: "Coffee dummy 3", width: 600, height: 800 },
 ];
 
 const breakpointColumnsObj = {
