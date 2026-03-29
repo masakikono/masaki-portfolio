@@ -6,11 +6,11 @@ import Masonry from "react-masonry-css";
 
 const MOCK_IMAGES = [
   { id: 1, src: "/images/laughing-outdoors.jpg", alt: "Masaki laughing outdoors", width: 600, height: 800 },
-  { id: 2, src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf", alt: "Coffee dummy 1", width: 600, height: 450 },
+  { id: 2, src: "/images/kaf-coffee.jpg", alt: "KAF Coffee", width: 600, height: 450 },
   { id: 3, src: "/images/blue-lagoon-drink.jpg", alt: "Blue lagoon lagoon drink", width: 600, height: 600 },
-  { id: 4, src: "https://images.unsplash.com/photo-1495474472201-1b0337f71ab4", alt: "Coffee dummy 2", width: 600, height: 800 },
+  { id: 4, src: "/images/laughing-laptop.jpg", alt: "Masaki at laptop", width: 600, height: 800 },
   { id: 5, src: "/images/blue-lagoon-sign.jpg", alt: "Blue lagoon sign", width: 600, height: 450 },
-  { id: 6, src: "https://images.unsplash.com/photo-1511920170033-f8396924c348", alt: "Coffee dummy 3", width: 600, height: 800 },
+  { id: 6, src: "/images/Iceland.jpg", alt: "Iceland landscape", width: 600, height: 800 },
 ];
 
 const breakpointColumnsObj = {
@@ -32,7 +32,7 @@ const Gallery = () => {
         {MOCK_IMAGES.map((img) => (
           <div key={img.id} className="mb-6 relative group overflow-hidden bg-neutral-900 rounded-sm">
             <Image
-              src={`${img.src}?auto=format&fit=crop&w=800&q=75`}
+              src={img.src}
               alt={img.alt}
               width={img.width}
               height={img.height}
