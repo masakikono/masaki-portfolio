@@ -2,26 +2,70 @@ export const translations = {
   ja: {
     nav: {
       about: "ABOUT",
+      journey: "JOURNEY",
       portfolio: "PORTFOLIO",
+      bench: "BENCH",
       work: "WORK",
       contact: "CONTACT"
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Coffee Professional & Photographer",
+      subtitle: "Barista x Engineer x Traveler",
       scroll: "SCROLL"
     },
     about: {
       title: "IDENTITY",
-      content: "Coming soon..."
+      content: "バリスタ × エンジニア × 旅人。外資メーカーの営業、フィリピン・メルボルンでの留学、東京でのエンジニア経験。紆余曲折を経て、現在はロンドンで「旅するコーヒーマン」として活動しています。私にとってコーヒーは単なる飲料ではなく、農園から一杯のカップまで続く深い探求の旅です。エンジニアとしての視点は、その探求をより精密にし、言語化するための強力な武器になっています。「机上の空論よりも、自らの体感と失敗から得たデータを信じる」その実体験至上主義を胸に、世界のどこかで今日も、最高の一杯と新しいコードを追求しています。"
+    },
+    journey: {
+      title: "CAREER JOURNEY",
+      items: [
+        {
+          year: "2025 - PRESENT",
+          location: "London, UK",
+          role: "Senior Barista & Roaster",
+          description: "ロンドンの ByS にてシニアバリスタ兼ロースターとして勤務。現場の抽出と焙煎の両面から、ロンドンのコーヒーシーンの最前線を支える。"
+        },
+        {
+          year: "2024",
+          location: "Oslo, Norway",
+          role: "Barista",
+          description: "北欧の浅煎り文化の聖地でバリスタとして研鑽を積み、独自の抽出哲学を深める。"
+        },
+        {
+          year: "2022",
+          location: "Melbourne, Australia",
+          role: "Barista",
+          description: "世界最高峰のカフェ文化の中で、スピードとクオリティを両立させる技術を体得。"
+        },
+        {
+          year: "2016 - 2019",
+          location: "Tokyo, Japan",
+          role: "Foreign Manufacturer Sales",
+          description: "新卒で外資系メーカーの営業職を3年間。ビジネスの基礎と、エンジニアリング/資産形成への目覚めの原点。"
+        },
+        {
+          year: "- 2016",
+          location: "Japan",
+          role: "University / Walking across Japan",
+          description: "大学時代、徒歩での日本縦断を完遂。「やってみないとわからない」という実体験至上主義の精神を確立。"
+        }
+      ]
+    },
+    bench: {
+        title: "THE BARISTA'S BENCH",
+        description: "焙煎プロファイリングと抽出データの可視化。ARTERAプロジェクトを通じて、コーヒーの感性をデータで解析しています。",
+        currentlyBrewing: "CURRENTLY BREWING",
+        roastProfile: "ROAST PROFILE",
+        notes: "NOTES"
     },
     work: {
-      title: "WORK & CAREER",
+      title: "WORK & PROJECTS",
       content: "Coming soon..."
     },
     contact: {
       title: "CONTACT",
-      content: "Coming soon..."
+      content: "プロフェッショナルなコーヒーのコンサルティングから、AI開発のコラボレーションまで。お気軽にご連絡ください。"
     },
     footer: {
       builtWith: "Designed & Built with AI"
@@ -30,26 +74,70 @@ export const translations = {
   en: {
     nav: {
       about: "ABOUT",
+      journey: "JOURNEY",
       portfolio: "PORTFOLIO",
+      bench: "BENCH",
       work: "WORK",
       contact: "CONTACT"
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Coffee Professional & Photographer",
+      subtitle: "Barista x Engineer x Traveler",
       scroll: "SCROLL"
     },
     about: {
       title: "IDENTITY",
-      content: "Coming soon..."
+      content: "Barista x Engineer x Traveler. From sales at a foreign manufacturer to studying in Cebu and Melbourne, followed by engineering in Tokyo. My journey has been non-linear, and I now operate as an 'eternal walking coffee traveler' based in London. To me, coffee is not just a beverage; it is a deep journey of exploration from the farm to the cup. My background as an engineer provides a precise lens to understand and articulate this exploration. Guided by the principle of 'experience over speculation,' I pursue the perfect pour and clean code wherever my journey takes me."
+    },
+    journey: {
+      title: "CAREER JOURNEY",
+      items: [
+        {
+          year: "2025 - PRESENT",
+          location: "London, UK",
+          role: "Senior Barista & Roaster",
+          description: "Working as a Senior Barista and Roaster at ByS in London, supporting the city's vibrant coffee scene from both the bar and the roastery."
+        },
+        {
+          year: "2024",
+          location: "Oslo, Norway",
+          role: "Barista",
+          description: "Refining my craft and developing a unique extraction philosophy in the heart of the Nordic light roast culture."
+        },
+        {
+          year: "2022",
+          location: "Melbourne, Australia",
+          role: "Barista",
+          description: "Mastering the balance of speed and quality within the world's most sophisticated coffee culture."
+        },
+        {
+          year: "2016 - 2019",
+          location: "Tokyo, Japan",
+          role: "Foreign Manufacturer Sales",
+          description: "Three years in sales for a foreign manufacturer. The foundation of my business skills and the origin of my interest in engineering and asset building."
+        },
+        {
+          year: "- 2016",
+          location: "Japan",
+          role: "University / Walking across Japan",
+          description: "Completed a walking traverse of Japan during university. Established the 'practical experience first' mindset."
+        }
+      ]
+    },
+    bench: {
+        title: "THE BARISTA'S BENCH",
+        description: "Visualizing roast profiles and brewing data. Through the ARTERA project, I translate coffee sensory experiences into actionable data.",
+        currentlyBrewing: "CURRENTLY BREWING",
+        roastProfile: "ROAST PROFILE",
+        notes: "NOTES"
     },
     work: {
-      title: "WORK & CAREER",
+      title: "WORK & PROJECTS",
       content: "Coming soon..."
     },
     contact: {
       title: "CONTACT",
-      content: "Coming soon..."
+      content: "From professional coffee consulting to AI development collaborations. Feel free to reach out."
     },
     footer: {
       builtWith: "Designed & Built with AI"

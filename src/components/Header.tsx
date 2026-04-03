@@ -10,6 +10,8 @@ const Header = () => {
 
   const navItems = [
     { label: t.nav.about, href: "/about" },
+    { label: t.nav.journey, href: "/#journey" },
+    { label: t.nav.bench, href: "/#bench" },
     { label: t.nav.portfolio, href: "/#portfolio" },
     { label: t.nav.work, href: "/work" },
     { label: t.nav.contact, href: "/contact" },
