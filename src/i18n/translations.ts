@@ -24,25 +24,25 @@ export const translations = {
           year: "2025 - PRESENT",
           location: "London, UK",
           role: "Senior Barista & Roaster",
-          description: "ロンドンの ByS にてシニアバリスタ兼ロースターとして勤務。現場の抽出と焙煎の両面から、ロンドンのコーヒーシーンの最前線を支える。"
+          description: "La Tostadora にてシニアバリスタ兼ロースターとして勤務。現場の抽出と焙煎の両面から、ロンドンのコーヒーシーンの最前線を支える。"
         },
         {
           year: "2024",
           location: "Oslo, Norway",
           role: "Barista",
-          description: "北欧の浅煎り文化の聖地でバリスタとして研鑽を積み、独自の抽出哲学を深める。"
+          description: "Supreme Roastworks 及び Fuglen にてバリスタとして勤務。北欧の浅煎り文化の聖地で研鑽を積み、独自の抽出哲学を深める。"
         },
         {
           year: "2022",
           location: "Melbourne, Australia",
           role: "Barista",
-          description: "世界最高峰のカフェ文化の中で、スピードとクオリティを両立させる技術を体得。"
+          description: "Axil Coffee Roasters にて勤務。世界最高峰のカフェ文化の中で、スピードとクオリティを両立させる技術を体得。"
         },
         {
           year: "2016 - 2019",
           location: "Tokyo, Japan",
           role: "Foreign Manufacturer Sales",
-          description: "新卒で外資系メーカーの営業職を3年間。ビジネスの基礎と、エンジニアリング/資産形成への目覚めの原点。"
+          description: "医療機器系外資メーカーでの営業経験。及び、Bindi（コーヒードリッパー）の代理店営業。"
         },
         {
           year: "- 2016",
@@ -96,25 +96,25 @@ export const translations = {
           year: "2025 - PRESENT",
           location: "London, UK",
           role: "Senior Barista & Roaster",
-          description: "Working as a Senior Barista and Roaster at ByS in London, supporting the city's vibrant coffee scene from both the bar and the roastery."
+          description: "Working as a Senior Barista and Roaster at La Tostadora in London, supporting the city's vibrant coffee scene from both the bar and the roastery."
         },
         {
           year: "2024",
           location: "Oslo, Norway",
           role: "Barista",
-          description: "Refining my craft and developing a unique extraction philosophy in the heart of the Nordic light roast culture."
+          description: "Working as a Barista at Supreme Roastworks and Fuglen. Refining my craft and developing a unique extraction philosophy in the heart of the Nordic light roast culture."
         },
         {
           year: "2022",
           location: "Melbourne, Australia",
           role: "Barista",
-          description: "Mastering the balance of speed and quality within the world's most sophisticated coffee culture."
+          description: "Working at Axil Coffee Roasters. Mastering the balance of speed and quality within the world's most sophisticated coffee culture."
         },
         {
           year: "2016 - 2019",
           location: "Tokyo, Japan",
           role: "Foreign Manufacturer Sales",
-          description: "Three years in sales for a foreign manufacturer. The foundation of my business skills and the origin of my interest in engineering and asset building."
+          description: "Sales representative for a foreign medical device manufacturer, and distributor sales for Bindi (coffee dripper)."
         },
         {
           year: "- 2016",
