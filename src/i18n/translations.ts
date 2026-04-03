@@ -10,12 +10,12 @@ export const translations = {
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Barista x Engineer x Traveler",
+      subtitle: "Coffee x AI x Traveler",
       scroll: "SCROLL"
     },
     about: {
       title: "IDENTITY",
-      content: "バリスタ × エンジニア × 旅人。外資メーカーの営業、フィリピン・メルボルンでの留学、東京でのエンジニア経験。紆余曲折を経て、現在はロンドンで「旅するコーヒーマン」として活動しています。私にとってコーヒーは単なる飲料ではなく、農園から一杯のカップまで続く深い探求の旅です。エンジニアとしての視点は、その探求をより精密にし、言語化するための強力な武器になっています。「机上の空論よりも、自らの体感と失敗から得たデータを信じる」その実体験至上主義を胸に、世界のどこかで今日も、最高の一杯と新しいコードを追求しています。"
+      content: "Coffee × AI × 旅人。外資メーカーの営業、フィリピン・メルボルンでの留学、東京でのエンジニア経験。紆余曲折を経て、現在はロンドンで「旅するコーヒーマン」として活動しています。私にとってコーヒーは単なる飲料ではなく、農園から一杯のカップまで続く深い探求の旅です。エンジニアとしての視点は、その探求をより精密にし、言語化するための強力な武器になっています。「机上の空論よりも、自らの体感と失敗から得たデータを信じる」その実体験至上主義を胸に、世界のどこかで今日も、最高の一杯と新しいコードを追求しています。"
     },
     journey: {
       title: "CAREER JOURNEY",
@@ -53,10 +53,10 @@ export const translations = {
       ]
     },
     bench: {
-        title: "THE BARISTA'S BENCH",
-        description: "焙煎プロファイリングと抽出データの可視化。ARTERAプロジェクトを通じて、コーヒーの感性をデータで解析しています。",
-        currentlyBrewing: "CURRENTLY BREWING",
-        roastProfile: "ROAST PROFILE",
+        title: "ROAST CALCULATOR",
+        description: "数値を入力して焙煎のプロファイルとDevelopment（現像率）をシミュレーションできるインタラクティブなダッシュボードです。",
+        currentlyBrewing: "ROAST PROFILE INPUTS",
+        roastProfile: "ROAST VISUALIZATION",
         notes: "NOTES"
     },
     work: {
@@ -82,12 +82,12 @@ export const translations = {
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Barista x Engineer x Traveler",
+      subtitle: "Coffee x AI x Traveler",
       scroll: "SCROLL"
     },
     about: {
       title: "IDENTITY",
-      content: "Barista x Engineer x Traveler. From sales at a foreign manufacturer to studying in Cebu and Melbourne, followed by engineering in Tokyo. My journey has been non-linear, and I now operate as an 'eternal walking coffee traveler' based in London. To me, coffee is not just a beverage; it is a deep journey of exploration from the farm to the cup. My background as an engineer provides a precise lens to understand and articulate this exploration. Guided by the principle of 'experience over speculation,' I pursue the perfect pour and clean code wherever my journey takes me."
+      content: "Coffee x AI x Traveler. From sales at a foreign manufacturer to studying in Cebu and Melbourne, followed by engineering in Tokyo. My journey has been non-linear, and I now operate as an 'eternal walking coffee traveler' based in London. To me, coffee is not just a beverage; it is a deep journey of exploration from the farm to the cup. My background as an engineer provides a precise lens to understand and articulate this exploration. Guided by the principle of 'experience over speculation,' I pursue the perfect pour and clean code wherever my journey takes me."
     },
     journey: {
       title: "CAREER JOURNEY",
@@ -125,10 +125,10 @@ export const translations = {
       ]
     },
     bench: {
-        title: "THE BARISTA'S BENCH",
-        description: "Visualizing roast profiles and brewing data. Through the ARTERA project, I translate coffee sensory experiences into actionable data.",
-        currentlyBrewing: "CURRENTLY BREWING",
-        roastProfile: "ROAST PROFILE",
+        title: "ROAST CALCULATOR",
+        description: "An interactive dashboard that simulates roast development and visualizes the curve based on your inputs.",
+        currentlyBrewing: "ROAST PROFILE INPUTS",
+        roastProfile: "ROAST VISUALIZATION",
         notes: "NOTES"
     },
     work: {
