@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { Coffee, Briefcase, GraduationCap, MapPin, Globe } from "lucide-react";
 
-const Journey = () => {
+export default function Journey() {
   const { t } = useLanguage();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const getIcon = (role: string) => {
     if (role.includes("Barista")) return <Coffee className="w-5 h-5" />;
@@ -15,40 +16,63 @@ const Journey = () => {
     return <MapPin className="w-5 h-5" />;
   };
 
+  // Map locations corresponding to the timeline items (0 to 4)
+  // 0: London, 1: Oslo, 2: Melbourne, 3: Tokyo, 4: Japan
+  const locations = [
+    { top: "35%", left: "45%", label: "London" },      // London
+    { top: "30%", left: "48%", label: "Oslo" },        // Oslo
+    { top: "80%", left: "88%", label: "Melbourne" },   // Melbourne
+    { top: "45%", left: "85%", label: "Tokyo" },       // Tokyo
+    { top: "42%", left: "84%", label: "Japan" }        // Japan (Near Tokyo)
+  ];
+
   return (
-    <section id="journey" className="py-32 px-6 bg-[#050a15]">
+    <section id="journey" className="py-32 px-6 bg-[#050a15] min-h-screen">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
-        <div className="w-full lg:w-1/2 sticky top-32 hidden lg:block">
-          <div className="relative aspect-video bg-navy-900/20 rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center">
+        <div className="w-full lg:w-1/2 sticky top-32 hidden lg:block h-[60vh]">
+          <div className="relative w-full h-full bg-navy-900/20 rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center">
              <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 0.1 }}
               transition={{ duration: 2 }}
               className="absolute inset-0 flex items-center justify-center p-8"
              >
-                <Globe className="w-full h-full text-white" strokeWidth={0.5} />
+                <Globe className="w-[120%] h-[120%] text-white" strokeWidth={0.5} />
              </motion.div>
              
              {/* Dynamic Location Points (Simplified) */}
              <div className="relative z-10 w-full h-full">
-                {/* London */}
-                <motion.div 
-                  className="absolute top-[35%] left-[45%] w-3 h-3 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]"
-                  animate={{ scale: [1, 1.5, 1] }}
-                  transition={{ repeat: Infinity, duration: 3 }}
-                />
-                <div className="absolute top-[38%] left-[45%] text-[10px] tracking-widest text-white/40 uppercase">London</div>
-                
-                {/* Oslo */}
-                <div className="absolute top-[30%] left-[48%] w-2 h-2 bg-white/40 rounded-full" />
-                
-                {/* Tokyo */}
-                <div className="absolute top-[45%] left-[85%] w-2 h-2 bg-white/40 rounded-full" />
-                
-                {/* Melbourne */}
-                <div className="absolute top-[80%] left-[88%] w-2 h-2 bg-white/40 rounded-full" />
+                {locations.map((loc, idx) => {
+                  const isActive = activeIndex === idx;
+                  return (
+                    <div key={idx} className="absolute" style={{ top: loc.top, left: loc.left }}>
+                      {/* Active Pulse Animation */}
+                      {isActive ? (
+                        <motion.div 
+                          className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] z-20"
+                          animate={{ scale: [1, 1.5, 1] }}
+                          transition={{ repeat: Infinity, duration: 2 }}
+                        />
+                      ) : (
+                        <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/30 rounded-full z-10 hover:bg-white/50 transition-colors" />
+                      )}
+                      
+                      {/* Label - visible when active */}
+                      <motion.div 
+                        initial={false}
+                        animate={{ 
+                          opacity: isActive ? 1 : 0, 
+                          x: isActive ? 12 : 5 
+                        }}
+                        className="absolute top-[-6px] left-[0px] text-[10px] tracking-widest uppercase font-semibold text-white drop-shadow-md whitespace-nowrap"
+                      >
+                        {loc.label}
+                      </motion.div>
+                    </div>
+                  );
+                })}
              </div>
 
              <div className="absolute bottom-8 left-8">
@@ -59,48 +83,52 @@ const Journey = () => {
         </div>
 
         {/* Right: Vertical Timeline */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 py-20 pb-64">
           <h2 className="text-sm font-medium mb-16 tracking-[0.3em] uppercase text-white/40 lg:hidden">
             {t.journey.title}
           </h2>
 
-          <div className="relative border-l border-white/10 ml-4 lg:ml-0 pl-10 space-y-24">
-            {t.journey.items.map((item: any, index: number) => (
-              <motion.div 
-                key={index}
-                className="relative"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                {/* Node Icon */}
-                <div className="absolute -left-[54px] top-0 w-10 h-10 rounded-full bg-[#0a1525] border border-white/10 flex items-center justify-center text-white/50 z-10 transition-colors hover:text-white hover:border-white/30">
-                  {getIcon(item.role)}
-                </div>
+          <div className="relative border-l border-white/10 ml-4 lg:ml-0 pl-10 space-y-32">
+            {t.journey.items.map((item: any, index: number) => {
+              const isActive = activeIndex === index;
+              
+              return (
+                <motion.div 
+                  key={index}
+                  className={`relative transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-40'}`}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  onViewportEnter={() => setActiveIndex(index)}
+                  viewport={{ margin: "-40% 0px -40% 0px" }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Node Icon */}
+                  <div className={`absolute -left-[54px] top-0 w-10 h-10 rounded-full border flex items-center justify-center z-10 transition-colors duration-500
+                    ${isActive ? 'bg-white text-[#050a15] border-white' : 'bg-[#0a1525] text-white/50 border-white/10'}`}>
+                    {getIcon(item.role)}
+                  </div>
 
-                <div className="flex flex-col gap-2">
-                  <span className="text-xs font-medium tracking-[0.2em] text-white/30 uppercase">
-                    {item.year}
-                  </span>
-                  <div className="flex items-center gap-3">
-                    <h4 className="text-2xl font-light tracking-tight text-white">{item.role}</h4>
+                  <div className="flex flex-col gap-2">
+                    <span className={`text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-500 ${isActive ? 'text-[#daa520]' : 'text-white/30'}`}>
+                      {item.year}
+                    </span>
+                    <div className="flex items-center gap-3">
+                      <h4 className="text-2xl font-light tracking-tight text-white">{item.role}</h4>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-white/40 tracking-wider mb-4">
+                      <MapPin className="w-3 h-3" />
+                      {item.location}
+                    </div>
+                    <p className="text-base text-neutral-400 font-light leading-relaxed max-w-lg">
+                      {item.description}
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-white/40 tracking-wider mb-4">
-                    <MapPin className="w-3 h-3" />
-                    {item.location}
-                  </div>
-                  <p className="text-base text-neutral-400 font-light leading-relaxed max-w-lg">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Journey;
+}
