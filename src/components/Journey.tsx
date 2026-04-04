@@ -31,19 +31,19 @@ export default function Journey() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
-        <div className="w-full lg:w-1/2 sticky top-32 hidden lg:block h-[60vh]">
-          <div className="relative w-full h-full bg-navy-900/20 rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center">
+        <div className="w-full lg:w-1/2 sticky top-32 hidden lg:block h-[60vh] flex flex-col items-center justify-center">
+          <div className="relative w-full max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
              <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.1 }}
+              whileInView={{ opacity: 0.15 }}
               transition={{ duration: 2 }}
-              className="absolute inset-0 flex items-center justify-center p-8"
+              className="absolute inset-0 flex items-center justify-center p-4"
              >
-                <Globe className="w-[120%] h-[120%] text-white" strokeWidth={0.5} />
+                <Globe className="w-full h-full text-[#daa520]" strokeWidth={0.5} />
              </motion.div>
              
              {/* Dynamic Location Points (Simplified) */}
-             <div className="relative z-10 w-full h-full">
+             <div className="absolute inset-0 z-10 w-full h-full">
                 {locations.map((loc, idx) => {
                   const isActive = activeIndex === idx;
                   return (
@@ -51,12 +51,12 @@ export default function Journey() {
                       {/* Active Pulse Animation */}
                       {isActive ? (
                         <motion.div 
-                          className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] z-20"
-                          animate={{ scale: [1, 1.5, 1] }}
+                          className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,1)] z-20"
+                          animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                           transition={{ repeat: Infinity, duration: 2 }}
                         />
                       ) : (
-                        <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/30 rounded-full z-10 hover:bg-white/50 transition-colors" />
+                        <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/20 rounded-full z-10 hover:bg-white/50 transition-colors" />
                       )}
                       
                       {/* Label - visible when active */}
@@ -74,11 +74,11 @@ export default function Journey() {
                   );
                 })}
              </div>
-
-             <div className="absolute bottom-8 left-8">
-                <h3 className="text-xl font-light tracking-[0.2em] text-white/80">{t.journey.title}</h3>
-                <p className="text-xs tracking-widest text-white/30 uppercase mt-2">Connecting the dots across continents</p>
-             </div>
+          </div>
+          
+          <div className="absolute bottom-4 left-4">
+            <h3 className="text-xl font-light tracking-[0.2em] text-white/80">{t.journey.title}</h3>
+            <p className="text-xs tracking-widest text-white/30 uppercase mt-2">Connecting the dots across continents</p>
           </div>
         </div>
 
