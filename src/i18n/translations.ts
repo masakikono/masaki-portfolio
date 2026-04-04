@@ -4,7 +4,7 @@ export const translations = {
       about: "ABOUT",
       journey: "JOURNEY",
       portfolio: "PORTFOLIO",
-      bench: "BENCH",
+      bench: "APP",
       work: "WORK",
       contact: "CONTACT"
     },
@@ -76,7 +76,7 @@ export const translations = {
       about: "ABOUT",
       journey: "JOURNEY",
       portfolio: "PORTFOLIO",
-      bench: "BENCH",
+      bench: "APP",
       work: "WORK",
       contact: "CONTACT"
     },
@@ -113,8 +113,8 @@ export const translations = {
         {
           year: "2016 - 2019",
           location: "Tokyo, Japan",
-          role: "Foreign Manufacturer Sales",
-          description: "Sales representative for a foreign medical device manufacturer."
+          role: "Global Medical Device Sales",
+          description: "Sales executive for an international medical device manufacturer."
         },
         {
           year: "- 2016",

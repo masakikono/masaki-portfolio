@@ -12,8 +12,8 @@ const About = () => {
       <div className="w-full md:w-1/2 flex justify-center">
         <div className="relative w-72 h-[450px] overflow-hidden rounded-sm filter brightness-90 contrast-110">
           <Image 
-            src="/images/kaf-coffee.jpg" 
-            alt="Masaki Kono at KAF"
+            src="/images/blue-lagoon-sign.jpg" 
+            alt="Masaki Kono with Coffee Cup"
             fill
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 50vw"

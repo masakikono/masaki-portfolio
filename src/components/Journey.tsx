@@ -31,8 +31,8 @@ export default function Journey() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
-        <div className="w-full lg:w-1/2 sticky top-32 hidden lg:block h-[60vh] flex flex-col items-center justify-center">
-          <div className="relative w-full max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
+        <div className="w-full lg:w-1/2 sticky top-24 lg:top-32 h-[45vh] lg:h-[60vh] flex flex-col items-center justify-center z-0">
+          <div className="relative w-full max-w-[280px] lg:max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
              <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 0.15 }}
@@ -76,39 +76,43 @@ export default function Journey() {
              </div>
           </div>
           
-          <div className="absolute bottom-4 left-4">
-            <h3 className="text-xl font-light tracking-[0.2em] text-white/80">{t.journey.title}</h3>
-            <p className="text-xs tracking-widest text-white/30 uppercase mt-2">Connecting the dots across continents</p>
+          <div className="absolute bottom-[-20px] lg:bottom-4 left-0 lg:left-4 text-center lg:text-left w-full lg:w-auto">
+            <h3 className="text-lg lg:text-xl font-light tracking-[0.2em] text-white/80">{t.journey.title}</h3>
+            <p className="text-[10px] lg:text-xs tracking-widest text-white/30 uppercase mt-2">Connecting the dots across continents</p>
           </div>
         </div>
 
         {/* Right: Vertical Timeline */}
-        <div className="w-full lg:w-1/2 py-20 pb-64">
-          <h2 className="text-sm font-medium mb-16 tracking-[0.3em] uppercase text-white/40 lg:hidden">
-            {t.journey.title}
+        <div className="w-full lg:w-1/2 py-10 lg:py-20 pb-40 lg:pb-64 relative z-10">
+          <h2 className="text-xs font-medium mb-12 tracking-[0.3em] uppercase text-white/40 lg:hidden text-center">
+            Career Timeline
           </h2>
 
-          <div className="relative border-l border-white/10 ml-4 lg:ml-0 pl-10 space-y-32">
+          <div className="relative border-l border-white/10 ml-4 lg:ml-0 pl-8 lg:pl-10 space-y-24 lg:space-y-32">
             {t.journey.items.map((item: any, index: number) => {
               const isActive = activeIndex === index;
               
               return (
                 <motion.div 
                   key={index}
-                  className={`relative transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-40'}`}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  onViewportEnter={() => setActiveIndex(index)}
-                  viewport={{ margin: "-40% 0px -40% 0px" }}
-                  transition={{ duration: 0.5 }}
+                  className={`relative transition-all duration-500`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 0.6 }}
                 >
-                  {/* Node Icon */}
-                  <div className={`absolute -left-[54px] top-0 w-10 h-10 rounded-full border flex items-center justify-center z-10 transition-colors duration-500
-                    ${isActive ? 'bg-white text-[#050a15] border-white' : 'bg-[#0a1525] text-white/50 border-white/10'}`}>
-                    {getIcon(item.role)}
-                  </div>
+                  <motion.div
+                    onViewportEnter={() => setActiveIndex(index)}
+                    viewport={{ margin: "-30% 0px -30% 0px" }}
+                    className="w-full h-full"
+                  >
+                    {/* Node Icon */}
+                    <div className={`absolute -left-[54px] top-0 w-10 h-10 rounded-full border flex items-center justify-center z-10 transition-colors duration-500
+                      ${isActive ? 'bg-white text-[#050a15] border-white' : 'bg-[#0a1525] text-white/50 border-white/10'}`}>
+                      {getIcon(item.role)}
+                    </div>
 
-                  <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2">
                     <span className={`text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-500 ${isActive ? 'text-[#daa520]' : 'text-white/30'}`}>
                       {item.year}
                     </span>
@@ -123,6 +127,7 @@ export default function Journey() {
                       {item.description}
                     </p>
                   </div>
+                  </motion.div>
                 </motion.div>
               );
             })}
