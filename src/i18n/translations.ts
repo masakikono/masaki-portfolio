@@ -24,7 +24,7 @@ export const translations = {
           year: "2025 - PRESENT",
           location: "London, UK",
           role: "Senior Barista & Roaster",
-          description: "La Tostadora にてシニアバリスタ兼ロースターとして勤務。現場の抽出と焙煎の両面から、ロンドンのコーヒーシーンの最前線を支える。"
+          description: "La Tostadora にてシニアバリスタ兼ロースターとして勤務。現場の抽出と焙煎の両面から、ロンドンのコーヒーシーンの最前線を支える。また、2026年よりコーヒードリッパー「BEENDI」の代理店営業としての活動も開始。"
         },
         {
           year: "2024",
@@ -42,7 +42,7 @@ export const translations = {
           year: "2016 - 2019",
           location: "Tokyo, Japan",
           role: "Foreign Manufacturer Sales",
-          description: "医療機器系外資メーカーでの営業経験。及び、Bindi（コーヒードリッパー）の代理店営業。"
+          description: "医療機器系外資メーカーでの営業経験。"
         },
         {
           year: "- 2016",
@@ -96,7 +96,7 @@ export const translations = {
           year: "2025 - PRESENT",
           location: "London, UK",
           role: "Senior Barista & Roaster",
-          description: "Working as a Senior Barista and Roaster at La Tostadora in London, supporting the city's vibrant coffee scene from both the bar and the roastery."
+          description: "Working as a Senior Barista and Roaster at La Tostadora in London, supporting the city's vibrant coffee scene from both the bar and the roastery. Also starting activities as a sales agent for the coffee dripper 'BEENDI' from 2026."
         },
         {
           year: "2024",
@@ -114,7 +114,7 @@ export const translations = {
           year: "2016 - 2019",
           location: "Tokyo, Japan",
           role: "Foreign Manufacturer Sales",
-          description: "Sales representative for a foreign medical device manufacturer, and distributor sales for Bindi (coffee dripper)."
+          description: "Sales representative for a foreign medical device manufacturer."
         },
         {
           year: "- 2016",
