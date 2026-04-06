@@ -25,6 +25,18 @@ export const translations = {
 
 「机上の空論よりも、自らの体感と失敗から得たデータを信じる」その実体験至上主義を胸に、世界のどこかで今日も、最高の一杯と新しいコードを追求しています。`
     },
+    work: {
+      title: "CASE STUDIES",
+      projects: {
+        artera: {
+          name: "ARTERA Strategist",
+          role: "Frontend Developer (Next.js / AI Integration)",
+          problem: "コーヒー焙煎のデータ分析が手動で煩雑であり、再現性の高いプロファイル作成に時間がかかっていた。",
+          solution: "Vision AIを活用した画像解析機能を実装。焙煎チャートのスクリーンショットから数値を自動抽出し、AIによる改善提案を行うダッシュボードを構築。",
+          result: "データ入力時間を80%削減。直感的なビジュアライゼーションにより、焙煎士の意思決定スピードが大幅に向上しました。"
+        }
+      }
+    },
     journey: {
       title: "CAREER JOURNEY",
       items: [
@@ -150,6 +162,18 @@ export const translations = {
     about: {
       title: "IDENTITY",
       content: "Coffee x AI x Traveler. From sales at a foreign manufacturer to studying in Cebu and Melbourne, followed by engineering in Tokyo. My journey has been non-linear, and I now operate as an 'eternal walking coffee traveler' based in London. To me, coffee is not just a beverage; it is a deep journey of exploration from the farm to the cup. My background as an engineer provides a precise lens to understand and articulate this exploration. Guided by the principle of 'experience over speculation,' I pursue the perfect pour and clean code wherever my journey takes me."
+    },
+    work: {
+      title: "CASE STUDIES",
+      projects: {
+        artera: {
+          name: "ARTERA Strategist",
+          role: "Frontend Developer (Next.js / AI Integration)",
+          problem: "Coffee roast data analysis was manual and cumbersome, making it time-consuming to recreate high-reproducibility profiles.",
+          solution: "Implemented an image analysis function utilizing Vision AI. Built a dashboard that automatically extracts numerical data from screenshots of roasting charts and provides AI-driven improvement suggestions.",
+          result: "Reduced data entry time by 80%. Intuitive visualization significantly improved the roaster's decision-making speed."
+        }
+      }
     },
     journey: {
       title: "CAREER JOURNEY",
