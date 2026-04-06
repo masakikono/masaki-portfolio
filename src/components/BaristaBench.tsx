@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { Coffee, Activity, Thermometer, Wind, ExternalLink } from "lucide-react";
@@ -14,6 +14,34 @@ const BaristaBench = () => {
   const [endTimeString, setEndTimeString] = useState("10:30");
   const [endTemp, setEndTemp] = useState(200);
   const [batchWeight, setBatchWeight] = useState(350);
+  const [copyStatus, setCopyStatus] = useState("Copy JSON");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("mk_roast_profile");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.fcTimeString) setFcTimeString(parsed.fcTimeString);
+        if (parsed.fcTemp) setFcTemp(parsed.fcTemp);
+        if (parsed.endTimeString) setEndTimeString(parsed.endTimeString);
+        if (parsed.endTemp) setEndTemp(parsed.endTemp);
+        if (parsed.batchWeight) setBatchWeight(parsed.batchWeight);
+      } catch (e) {}
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("mk_roast_profile", JSON.stringify({
+      fcTimeString, fcTemp, endTimeString, endTemp, batchWeight
+    }));
+  }, [fcTimeString, fcTemp, endTimeString, endTemp, batchWeight]);
+
+  const handleCopy = () => {
+    const data = JSON.stringify({ fcTimeString, fcTemp, endTimeString, endTemp, batchWeight }, null, 2);
+    navigator.clipboard.writeText(data);
+    setCopyStatus("Copied!");
+    setTimeout(() => setCopyStatus("Copy JSON"), 2000);
+  };
 
   // Time parsing utility
   const parseTime = (timeStr: string) => {
@@ -70,14 +98,22 @@ const BaristaBench = () => {
                 <h4 className="text-xs font-semibold tracking-[0.3em] text-white/40 uppercase mb-4">{t.bench.roastProfile}</h4>
                 <h3 className="text-3xl font-light text-white tracking-tight">Interactive Roast Simulator</h3>
               </div>
-              <a 
-                href="https://ai-roasting-strategist.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-medium tracking-widest text-[#daa520] hover:text-white transition-colors border border-[#daa520]/30 hover:border-white/30 px-4 py-2 rounded-full"
-              >
-                Launch ARTERA
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button 
+                  onClick={handleCopy}
+                  className="flex items-center justify-center gap-2 text-xs font-medium tracking-widest text-neutral-300 hover:text-white transition-colors border border-white/10 hover:border-white/30 px-4 py-2 rounded-full"
+                >
+                  {copyStatus}
+                </button>
+                <a 
+                  href="https://ai-roasting-strategist.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 text-xs font-medium tracking-widest text-[#daa520] hover:text-[#daa520]/80 transition-colors border border-[#daa520]/30 hover:border-[#daa520] px-4 py-2 rounded-full"
+                >
+                  Launch ARTERA
+                </a>
+              </div>
             </div>
 
             {/* Custom SVG Roast Curve */}
@@ -220,6 +256,55 @@ const BaristaBench = () => {
                 </div>
               </form>
             </div>
+
+            {/* AI Insights & Recommendations */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+              className="p-6 md:p-8 bg-gradient-to-br from-[#daa520]/10 to-transparent rounded-2xl border border-[#daa520]/20 backdrop-blur-md"
+            >
+              <h4 className="text-[10px] font-bold tracking-[0.3em] text-[#daa520] uppercase mb-6">Roast Analysis</h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <span className="text-[9px] text-neutral-500 uppercase tracking-widest block mb-2">Predicted Roast Degree</span>
+                  <div className={`text-xl font-medium tracking-tight ${
+                    endTemp < 188 ? "text-amber-100" :
+                    endTemp < 192 ? "text-amber-200" :
+                    endTemp < 196 ? "text-[#daa520]" :
+                    endTemp < 200 ? "text-orange-300" :
+                    endTemp < 204 ? "text-orange-400" :
+                    endTemp < 208 ? "text-orange-500" :
+                    endTemp < 212 ? "text-orange-700" :
+                    "text-stone-700"
+                  }`}>
+                    {endTemp < 188 ? "Light Cinnamon / Under" :
+                     endTemp < 192 ? "Cinnamon / Very Light" :
+                     endTemp < 196 ? "New England / Light" :
+                     endTemp < 200 ? "American / Medium-Light" :
+                     endTemp < 204 ? "City / Medium" :
+                     endTemp < 208 ? "Full City / Medium-Dark" :
+                     endTemp < 212 ? "Vienna / Dark" :
+                     "French & Italian / Heavy"}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-white/5">
+                  <span className="text-[9px] text-neutral-500 uppercase tracking-widest block mb-2">Brewing Advice</span>
+                  <p className="text-xs text-neutral-300 leading-relaxed font-light">
+                    {endTemp < 188 ? "未発達（アンダー）の可能性がある極浅煎り。沸騰直後のお湯で、挽き目を細かくし、長めの浸漬時間を設けてください。" :
+                     endTemp < 192 ? "非常に明るい酸味が特徴。フレーバーを活かすため、94°C以上の高温かつ高速な抽出でクリーンさを追求しましょう。" :
+                     endTemp < 196 ? "サードウェーブの定番。ベリー系の酸味。93°C前後で、豆の個性が最もクリアに表現されるポイントです。" :
+                     endTemp < 200 ? "酸味と甘みのバランスが良い。91-92°Cで、中庸な挽き目を選択することで安定した味になります。" :
+                     endTemp < 204 ? "甘みが最大化される中煎り。90°C前後の標準的な温度で、厚みのあるマウスフィールを狙うのがおすすめ。" :
+                     endTemp < 208 ? "チョコやナッツのコク。88-89°Cに温度を下げ、少し粗めの挽き目にして雑味を抑えるのがコツです。" :
+                     endTemp < 212 ? "重厚なボディとスモーキーさ。85°C程度の低温で、ゆっくりとドリップして濃厚なエキスを楽しんでください。" :
+                     "極深煎り。苦味が支配的です。82°C程度の超低温で、ネルドリップのような点滴抽出が最も相性良く仕上がります。"}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
           
         </div>

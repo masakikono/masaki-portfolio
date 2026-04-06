@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Masonry from "react-masonry-css";
 
 const MOCK_IMAGES = [
   { id: 1, src: "/images/laughing-outdoors.jpg", alt: "Masaki laughing outdoors", width: 600, height: 800 },
@@ -24,19 +23,14 @@ const Gallery = () => {
     <section className="py-24 px-6 max-w-7xl mx-auto">
       <h2 className="text-sm md:text-base font-medium mb-16 tracking-[0.3em] uppercase text-muted text-center">Portfolio</h2>
       
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="masonry-grid"
-        columnClassName="masonry-grid_column"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {MOCK_IMAGES.map((img) => (
-          <div key={img.id} className="mb-6 relative group overflow-hidden bg-neutral-900 rounded-sm">
+          <div key={img.id} className="relative group overflow-hidden bg-neutral-900 rounded-sm aspect-[4/5] w-full">
             <Image
               src={img.src}
               alt={img.alt}
-              width={img.width}
-              height={img.height}
-              className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               loading="lazy"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
@@ -44,7 +38,7 @@ const Gallery = () => {
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         ))}
-      </Masonry>
+      </div>
     </section>
   );
 };

@@ -13,27 +13,40 @@ const Header = () => {
     { label: t.nav.journey, href: "/journey" },
     { label: t.nav.bench, href: "/bench" },
     { label: t.nav.portfolio, href: "/portfolio" },
-    { label: t.nav.work, href: "/work" },
+    { label: t.nav.products as string, href: "/products" },
+    { label: t.nav.insights as string, href: "/insights" },
     { label: t.nav.contact, href: "/contact" },
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
+    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300 print:hidden">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-lg tracking-widest font-semibold uppercase text-foreground z-50 relative">
-          MK
-        </Link>
+        <div className="flex items-center space-x-6 z-50 relative">
+          <Link href="/" className="text-lg tracking-widest font-semibold uppercase text-foreground font-serif">
+            MK
+          </Link>
+          
+          <div className="hidden sm:flex items-center space-x-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm cursor-pointer hover:bg-white/10 transition-colors">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] tracking-widest uppercase font-medium text-emerald-400/90">
+              Available
+            </span>
+          </div>
+        </div>
         
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className="text-muted hover:text-foreground transition-colors">
+            <Link key={item.label} href={item.href} className="text-muted hover:text-foreground transition-colors hover:-translate-y-0.5 transform duration-300">
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center space-x-2 text-xs font-semibold">
+        <div className="hidden md:flex items-center space-x-2 text-xs font-semibold z-50 relative">
           <button 
             onClick={() => setLang("ja")}
             className={`transition-colors ${lang === "ja" ? "text-foreground" : "text-muted hover:text-foreground"}`}

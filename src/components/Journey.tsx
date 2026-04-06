@@ -21,10 +21,27 @@ export default function Journey() {
   const locations = [
     { top: "35%", left: "45%", label: "London" },      // London
     { top: "30%", left: "48%", label: "Oslo" },        // Oslo
-    { top: "80%", left: "88%", label: "Melbourne" },   // Melbourne
-    { top: "45%", left: "85%", label: "Tokyo" },       // Tokyo
-    { top: "42%", left: "84%", label: "Japan" }        // Japan (Near Tokyo)
+    { top: "72%", left: "75%", label: "Melbourne" },   // Melbourne safely inside
+    { top: "46%", left: "74%", label: "Tokyo" },       // Tokyo
+    { top: "40%", left: "68%", label: "Japan" }        // Japan (Near Tokyo)
   ];
+
+  const handleLocationClick = (index: number) => {
+    setActiveIndex(index);
+    const element = document.getElementById(`journey-item-${index}`);
+    if (element) {
+      const offset = 100; // Offset for header
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <section id="journey" className="py-32 px-6 bg-[#050a15] min-h-screen">
@@ -47,7 +64,12 @@ export default function Journey() {
                 {locations.map((loc, idx) => {
                   const isActive = activeIndex === idx;
                   return (
-                    <div key={idx} className="absolute" style={{ top: loc.top, left: loc.left }}>
+                    <div 
+                      key={idx} 
+                      className="absolute cursor-pointer group/marker" 
+                      style={{ top: loc.top, left: loc.left }}
+                      onClick={() => handleLocationClick(idx)}
+                    >
                       {/* Active Pulse Animation */}
                       {isActive ? (
                         <motion.div 
@@ -56,17 +78,18 @@ export default function Journey() {
                           transition={{ repeat: Infinity, duration: 2 }}
                         />
                       ) : (
-                        <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/20 rounded-full z-10 hover:bg-white/50 transition-colors" />
+                        <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/20 rounded-full z-10 group-hover/marker:bg-white/50 transition-colors" />
                       )}
                       
-                      {/* Label - visible when active */}
+                      {/* Label - visible when active or hovered */}
                       <motion.div 
                         initial={false}
                         animate={{ 
-                          opacity: isActive ? 1 : 0, 
-                          x: isActive ? 12 : 5 
+                          opacity: isActive ? 1 : 0.4, 
+                          x: isActive ? 12 : 5,
+                          scale: isActive ? 1.1 : 1
                         }}
-                        className="absolute top-[-6px] left-[0px] text-[10px] tracking-widest uppercase font-semibold text-white drop-shadow-md whitespace-nowrap"
+                        className={`absolute top-[-6px] left-[0px] text-[10px] tracking-widest uppercase font-semibold text-white drop-shadow-md whitespace-nowrap transition-all group-hover/marker:opacity-100 group-hover/marker:translate-x-2`}
                       >
                         {loc.label}
                       </motion.div>
@@ -95,6 +118,7 @@ export default function Journey() {
               return (
                 <motion.div 
                   key={index}
+                  id={`journey-item-${index}`}
                   className={`relative transition-all duration-500`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

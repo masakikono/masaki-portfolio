@@ -4,32 +4,36 @@ import React from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
+import Activity from "./Activity";
+
 const About = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   
   return (
-    <section id="about" className="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16">
-      <div className="w-full md:w-1/2 flex justify-center">
-        <div className="relative w-72 h-[450px] overflow-hidden rounded-sm filter brightness-90 contrast-110">
+    <section id="about" className="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-center gap-16">
+      <div className="w-full md:w-[40%] flex justify-center md:sticky md:top-32">
+        <div className="relative w-full max-w-[320px] aspect-[3/4] overflow-hidden rounded-2xl filter brightness-90 contrast-110 shadow-2xl">
           <Image 
             src="/images/blue-lagoon-sign.jpg" 
             alt="Masaki Kono with Coffee Cup"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
         </div>
       </div>
       
-      <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-        <h2 className="text-sm font-medium mb-12 tracking-[0.3em] uppercase text-muted">{t.about.title}</h2>
+      <div className="w-full md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left">
+        <h2 className="text-sm font-semibold mb-12 tracking-[0.4em] uppercase text-[#daa520]">{t.about.title}</h2>
         
-        <div className="space-y-8 text-base md:text-lg font-light leading-relaxed text-neutral-300">
-          <p>
+        <div className="text-sm md:text-base font-light leading-[2.2] text-neutral-300 space-y-8">
+          <p className="whitespace-pre-line">
             {t.about.content}
           </p>
         </div>
+        
+        <Activity />
       </div>
     </section>
   );
