@@ -22,7 +22,7 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300 print:hidden">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-6 z-50 relative">
-          <Link href="/" className="text-lg tracking-widest font-semibold uppercase text-foreground font-serif">
+          <Link href="/" className="text-lg tracking-[0.3em] font-bold uppercase text-foreground">
             MK
           </Link>
           
