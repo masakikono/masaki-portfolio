@@ -43,7 +43,7 @@ const Contact = () => {
       {/* Main Call To Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-6 mb-24 w-full justify-center">
         <a 
-          href="https://calendly.com/" 
+          href="https://calendar.google.com/calendar/u/0/appointments/schedules" 
           target="_blank" 
           rel="noopener noreferrer"
           className="group relative overflow-hidden bg-white text-black px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-white transition-transform hover:-translate-y-1"

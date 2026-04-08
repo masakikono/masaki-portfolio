@@ -52,7 +52,7 @@ export default function Journey() {
           <div className="relative w-full max-w-[280px] lg:max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
              <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.08 }}
+              whileInView={{ opacity: 0.02 }}
               transition={{ duration: 2 }}
               className="absolute inset-0 flex items-center justify-center p-4"
              >
@@ -85,7 +85,7 @@ export default function Journey() {
                       <motion.div 
                         initial={false}
                         animate={{ 
-                          opacity: isActive ? 1 : 0.4, 
+                          opacity: isActive ? 0.4 : 0.05, 
                           x: isActive ? 12 : 5,
                           scale: isActive ? 1.1 : 1
                         }}
