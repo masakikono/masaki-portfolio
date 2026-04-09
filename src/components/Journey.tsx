@@ -48,7 +48,7 @@ export default function Journey() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
-        <div className="w-full lg:w-1/2 relative lg:sticky top-24 lg:top-32 h-[45vh] lg:h-[60vh] flex flex-col items-center justify-center z-0">
+        <div className="w-full lg:w-1/2 relative lg:sticky top-24 lg:top-32 h-auto py-12 lg:h-[60vh] flex flex-col items-center justify-center z-0">
           <div className="relative w-full max-w-[280px] lg:max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
              <motion.div
               initial={{ opacity: 0 }}
