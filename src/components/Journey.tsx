@@ -48,11 +48,11 @@ export default function Journey() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
-        <div className="w-full lg:w-1/2 sticky top-24 lg:top-32 h-[45vh] lg:h-[60vh] flex flex-col items-center justify-center z-0">
+        <div className="w-full lg:w-1/2 relative lg:sticky top-24 lg:top-32 h-[45vh] lg:h-[60vh] flex flex-col items-center justify-center z-0">
           <div className="relative w-full max-w-[280px] lg:max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
              <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.02 }}
+              whileInView={{ opacity: 0.15 }}
               transition={{ duration: 2 }}
               className="absolute inset-0 flex items-center justify-center p-4"
              >
@@ -85,7 +85,7 @@ export default function Journey() {
                       <motion.div 
                         initial={false}
                         animate={{ 
-                          opacity: isActive ? 0.4 : 0.05, 
+                          opacity: isActive ? 1 : 0.4, 
                           x: isActive ? 12 : 5,
                           scale: isActive ? 1.1 : 1
                         }}
