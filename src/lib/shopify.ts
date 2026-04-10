@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 const domain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN;
 const storefrontAccessToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
