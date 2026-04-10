@@ -80,34 +80,36 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center space-y-8 h-screen w-screen px-6">
-          <nav className="flex flex-col items-center space-y-8 text-xl tracking-widest uppercase mt-12">
-            {navItems.map((item) => (
-              <Link 
-                key={item.label} 
-                href={item.href} 
-                className="text-foreground hover:text-muted transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+        <div className="fixed inset-0 bg-background z-40 h-screen w-screen">
+          <div className="flex flex-col h-full px-12 pt-32 pb-16">
+            <nav className="flex flex-col items-start space-y-8 text-xl sm:text-2xl tracking-widest uppercase">
+              {navItems.map((item, idx) => (
+                <Link 
+                  key={item.label} 
+                  href={item.href} 
+                  className="text-foreground hover:text-[#daa520] transition-colors flex items-center gap-4 group"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span className="text-[10px] text-muted group-hover:text-[#daa520] transition-colors">{String(idx + 1).padStart(2, '0')}</span>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            
+            <div className="mt-auto pt-12 border-t border-border flex items-center space-x-6 text-sm font-semibold">
+              <button 
+                onClick={() => { setLang("ja"); setIsMobileMenuOpen(false); }}
+                className={`transition-colors py-2 ${lang === "ja" ? "text-[#daa520] border-b border-[#daa520]" : "text-muted hover:text-foreground"}`}
               >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          
-          <div className="flex items-center space-x-4 text-sm font-semibold pt-12 border-t border-border w-1/2 justify-center">
-            <button 
-              onClick={() => { setLang("ja"); setIsMobileMenuOpen(false); }}
-              className={`transition-colors ${lang === "ja" ? "text-foreground" : "text-muted hover:text-foreground"}`}
-            >
-              JP
-            </button>
-            <span className="text-muted">/</span>
-            <button 
-              onClick={() => { setLang("en"); setIsMobileMenuOpen(false); }}
-              className={`transition-colors ${lang === "en" ? "text-foreground" : "text-muted hover:text-foreground"}`}
-            >
-              EN
-            </button>
+                JAPANESE
+              </button>
+              <button 
+                onClick={() => { setLang("en"); setIsMobileMenuOpen(false); }}
+                className={`transition-colors py-2 ${lang === "en" ? "text-[#daa520] border-b border-[#daa520]" : "text-muted hover:text-foreground"}`}
+              >
+                ENGLISH
+              </button>
+            </div>
           </div>
         </div>
       )}
