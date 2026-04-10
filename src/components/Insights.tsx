@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowUpRight, BookOpen } from "lucide-react";
@@ -8,8 +8,26 @@ import { ArrowUpRight, BookOpen } from "lucide-react";
 const Insights = () => {
   const { t } = useLanguage();
   const insightsData = t.insights as any;
+  const [articles, setArticles] = useState<any[]>([]);
 
-  if (!insightsData || !insightsData.articles) return null;
+  useEffect(() => {
+    // Initial static articles from translation
+    if (insightsData && insightsData.articles) {
+      setArticles(insightsData.articles);
+    }
+
+    // Try fetching live RSS
+    fetch("/api/insights")
+      .then(res => res.json())
+      .then(data => {
+        if (data.articles && data.articles.length > 0) {
+          setArticles(data.articles);
+        }
+      })
+      .catch(err => console.error("Could not fetch RSS:", err));
+  }, [insightsData]);
+
+  if (!insightsData || articles.length === 0) return null;
 
   return (
     <section id="insights" className="py-32 px-6 max-w-7xl mx-auto flex flex-col items-center">
@@ -19,7 +37,7 @@ const Insights = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
-        {insightsData.articles.map((article: any, index: number) => (
+        {articles.map((article: any, index: number) => (
           <motion.a
             key={index}
             href={article.link}

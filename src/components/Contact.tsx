@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { Calendar, Download, Mail } from "lucide-react";
+import { PopupModal } from "react-calendly";
 
 const Contact = () => {
   const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,30 +44,36 @@ const Contact = () => {
 
       {/* Main Call To Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-6 mb-24 w-full justify-center">
-        <a 
-          href="https://calendar.google.com/calendar/u/0/appointments/schedules" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative overflow-hidden bg-white text-black px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-white transition-transform hover:-translate-y-1"
+        <button 
+          onClick={() => setIsCalendlyOpen(true)}
+          className="group relative overflow-hidden bg-white text-black px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-white transition-transform hover:-translate-y-1 cursor-pointer"
         >
           <div className="absolute inset-0 bg-[#daa520] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
           <Calendar className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
           <span className="text-xs font-bold tracking-[0.2em] uppercase relative z-10 group-hover:text-white transition-colors duration-300">
             {contactData.bookCall || "15-MIN DISCOVERY CALL"}
           </span>
-        </a>
+        </button>
 
         <a 
-          href="/masaki_kono_resume.pdf"
-          download="Masaki_Kono_Resume.pdf"
+          href="/resume"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative overflow-hidden bg-transparent text-white px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-border hover:border-white transition-all hover:-translate-y-1"
         >
           <Download className="w-5 h-5" />
           <span className="text-xs font-bold tracking-[0.2em] uppercase">
-            {contactData.resume || "DOWNLOAD RESUME"}
+            {contactData.resume || "VIEW RESUME (PRINTABLE)"}
           </span>
         </a>
       </div>
+
+      <PopupModal
+        url="https://calendly.com/masakikono/15min"
+        onModalClose={() => setIsCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={typeof window !== 'undefined' ? document.getElementById('__next') || document.body : undefined as any}
+      />
 
       {/* Direct Message Form (Fallback) */}
       <div className="w-full max-w-lg border-t border-white/5 pt-16">

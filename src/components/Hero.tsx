@@ -3,21 +3,23 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import dynamic from "next/dynamic";
+
+const HeroScene = dynamic(() => import('@/components/HeroScene'), { ssr: false });
 
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
     <section className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/Iceland.jpg')",
-        }}
-      >
-        {/* Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Background Image & 3D Canvas */}
+      <div className="absolute inset-0 z-0 bg-[#050a15]">
+         <div className="absolute inset-0 opacity-40 mix-blend-screen overflow-hidden">
+            <HeroScene />
+         </div>
+        
+        {/* Overlay gradient to ease the text */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-[#050a15] opacity-80 pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 flex flex-col items-center px-4">
