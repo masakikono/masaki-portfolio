@@ -68,12 +68,14 @@ const Contact = () => {
         </a>
       </div>
 
-      <PopupModal
-        url="https://calendly.com/masakikono/15min"
-        onModalClose={() => setIsCalendlyOpen(false)}
-        open={isCalendlyOpen}
-        rootElement={typeof window !== 'undefined' ? document.getElementById('__next') || document.body : undefined as any}
-      />
+      {isCalendlyOpen && (
+        <PopupModal
+          url="https://calendly.com/masakikono/15min"
+          onModalClose={() => setIsCalendlyOpen(false)}
+          open={isCalendlyOpen}
+          rootElement={document.getElementById('__next') || document.body}
+        />
+      )}
 
       {/* Direct Message Form (Fallback) */}
       <div className="w-full max-w-lg border-t border-white/5 pt-16">
