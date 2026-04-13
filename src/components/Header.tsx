@@ -80,7 +80,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-background z-40 h-screen w-screen">
+        <div className="fixed inset-0 bg-background z-40 h-screen w-full">
           <div className="flex flex-col h-full px-12 pt-32 pb-16">
             <nav className="flex flex-col items-start space-y-8 text-xl sm:text-2xl tracking-widest uppercase">
               {navItems.map((item, idx) => (
