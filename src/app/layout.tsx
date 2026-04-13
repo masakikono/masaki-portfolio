@@ -32,12 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="scroll-smooth overflow-x-hidden">
+    <html lang="ja" className="scroll-smooth overflow-x-clip">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen bg-background text-foreground flex flex-col font-light selection:bg-neutral-800 selection:text-white overflow-x-hidden w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen bg-background text-foreground flex flex-col font-light selection:bg-neutral-800 selection:text-white overflow-x-clip w-full`}
       >
         <LanguageProvider>
-          <div className="relative w-full overflow-x-hidden flex flex-col min-h-screen">
+          <div className="relative w-full overflow-x-clip flex flex-col min-h-screen">
             <Header />
             <div className="flex-1 w-full flex flex-col">
               {children}
