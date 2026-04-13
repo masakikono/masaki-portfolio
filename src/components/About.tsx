@@ -24,10 +24,10 @@ const About = () => {
         </div>
       </div>
       
-      <div className="w-full md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="w-full max-w-full min-w-0 md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left overflow-hidden">
         <h2 className="text-sm font-semibold mb-12 tracking-[0.4em] uppercase text-[#daa520]">{t.about.title}</h2>
         
-        <div className="text-sm md:text-base font-light leading-[2.2] text-neutral-300 space-y-8">
+        <div className="text-sm md:text-base font-light leading-[2.2] text-neutral-300 space-y-8 w-full">
           <p className="whitespace-pre-line">
             {t.about.content}
           </p>

@@ -12,7 +12,7 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 const Activity = () => {
   return (
-    <div className="w-full mt-16 pt-16 border-t border-white/5 relative">
+    <div className="w-full max-w-full min-w-0 overflow-hidden mt-16 pt-16 border-t border-white/5 relative">
       <div className="flex items-center gap-3 mb-8">
         <div className="p-2 bg-[#216e39]/10 rounded-lg">
           <ActivityIcon className="w-5 h-5 text-[#216e39]" />
