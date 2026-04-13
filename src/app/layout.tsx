@@ -37,11 +37,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen bg-background text-foreground flex flex-col font-light selection:bg-neutral-800 selection:text-white overflow-x-hidden w-full`}
       >
         <LanguageProvider>
-          <Header />
+          <div className="relative w-full overflow-x-hidden flex flex-col min-h-screen">
+            <Header />
             <div className="flex-1 w-full flex flex-col">
               {children}
             </div>
-          <Footer />
+            <Footer />
+          </div>
         </LanguageProvider>
       </body>
     </html>
