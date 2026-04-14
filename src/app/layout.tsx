@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -24,13 +24,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Masaki Kono | Coffee Professional & Photographer",
   description: "Personal portfolio of Masaki Kono. Roaster, Barista, and Photographer.",
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false, // Prevents iOS from zooming/panning slightly on edge interactions
 };
 
 export default function RootLayout({
