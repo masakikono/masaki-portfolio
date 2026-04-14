@@ -15,11 +15,9 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-playfair);
-}
-
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  overflow-x: hidden !important;
 }
 
 body {
@@ -29,8 +27,9 @@ body {
   /* Improve typography rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;
+  overflow-x: hidden !important;
   width: 100%;
+  position: relative;
 }
 
 /* Custom Utilities for Masonry */
