@@ -44,13 +44,16 @@ const Hero = () => {
       </div>
 
       <motion.div 
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer z-20 group"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+        onClick={() => {
+          document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        }}
       >
-        <span className="text-xs tracking-widest font-medium uppercase mb-2 text-white/50">{t.hero.scroll}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/50 animate-bounce">
+        <span className="text-xs tracking-widest font-medium uppercase mb-2 text-white/50 group-hover:text-white transition-colors">{t.hero.scroll}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/50 animate-bounce group-hover:text-white transition-colors">
           <path d="M12 5v14M19 12l-7 7-7-7"/>
         </svg>
       </motion.div>
