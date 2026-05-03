@@ -14,7 +14,7 @@ export async function GET() {
   });
   
   try {
-    const feed = await parser.parseURL("https://note.com/masakikono_3_0/rss");
+    const feed = await parser.parseURL("https://note.com/masaki_19931015/rss");
     
     const articles = feed.items.slice(0, 3).map((item) => {
       // note.com rss often has images in description or media:thumbnail

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface ProductCardProps {
@@ -14,24 +15,32 @@ interface ProductCardProps {
     description: string;
     image: string;
     checkoutUrl: string;
+    buttonText?: string;
+    disabled?: boolean;
   };
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { t } = useLanguage();
+  const router = useRouter();
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const handleBuyNow = () => {
-    setIsRedirecting(true);
-    // Simulate Shopify logic
-    setTimeout(() => {
-       setIsRedirecting(false);
-       setIsCompleted(true);
-       
-       // In a real app: window.location.href = product.checkoutUrl;
-       setTimeout(() => setIsCompleted(false), 3000);
-    }, 1500);
+    if (product.disabled) return;
+
+    if (product.checkoutUrl.startsWith("http")) {
+       setIsRedirecting(true);
+       setTimeout(() => {
+          setIsRedirecting(false);
+          setIsCompleted(true);
+          window.open(product.checkoutUrl, '_blank');
+          setTimeout(() => setIsCompleted(false), 3000);
+       }, 800);
+    } else {
+       // Internal route
+       router.push(product.checkoutUrl);
+    }
   };
 
   return (
@@ -68,8 +77,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
         <button 
           onClick={handleBuyNow}
-          disabled={isRedirecting}
-          className="w-full relative py-4 bg-white text-[#050a15] rounded-xl font-semibold tracking-widest uppercase text-xs overflow-hidden transition-transform active:scale-95 disabled:opacity-80"
+          disabled={product.disabled || isRedirecting}
+          className="w-full relative py-4 bg-white text-[#050a15] rounded-xl font-semibold tracking-widest uppercase text-xs overflow-hidden transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <AnimatePresence mode="wait">
             {isRedirecting ? (
@@ -81,7 +90,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 className="flex items-center justify-center gap-2"
               >
                 <div className="w-4 h-4 border-2 border-[#050a15]/20 border-t-[#050a15] rounded-full animate-spin" />
-                <span>{t.products.checkoutRedirect}</span>
+                <span>Redirecting...</span>
               </motion.div>
             ) : isCompleted ? (
               <motion.div 
@@ -92,7 +101,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 className="flex items-center justify-center gap-2 text-emerald-600"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Secure Link Ready</span>
+                <span>Success</span>
               </motion.div>
             ) : (
               <motion.div 
@@ -102,9 +111,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 exit={{ opacity: 0 }}
                 className="flex items-center justify-center gap-2"
               >
-                <ShoppingBag className="w-4 h-4" />
-                <span>{t.products.buyNow}</span>
-                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                {product.disabled ? null : <ShoppingBag className="w-4 h-4" />}
+                <span>{product.buttonText || t.products.buyNow}</span>
+                {product.disabled ? null : <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />}
               </motion.div>
             )}
           </AnimatePresence>

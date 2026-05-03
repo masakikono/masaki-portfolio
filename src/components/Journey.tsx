@@ -17,13 +17,12 @@ export default function Journey() {
   };
 
   // Map locations corresponding to the timeline items (0 to 4)
-  // 0: London, 1: Oslo, 2: Melbourne, 3: Tokyo, 4: Japan
   const locations = [
-    { top: "35%", left: "45%", label: "London" },      // London
-    { top: "30%", left: "48%", label: "Oslo" },        // Oslo
-    { top: "72%", left: "75%", label: "Melbourne" },   // Melbourne safely inside
-    { top: "46%", left: "74%", label: "Tokyo" },       // Tokyo
-    { top: "40%", left: "68%", label: "Japan" }        // Japan (Near Tokyo)
+    { top: "30%", left: "45%", label: "London" },
+    { top: "25%", left: "48%", label: "Oslo" },
+    { top: "78%", left: "82%", label: "Melbourne" },
+    { top: "45%", left: "78%", label: "Tokyo" },
+    { top: "40%", left: "76%", label: "Japan" }
   ];
 
   const handleLocationClick = (index: number) => {
@@ -44,11 +43,11 @@ export default function Journey() {
   };
 
   return (
-    <section id="journey" className="py-32 px-6 bg-[#050a15] min-h-screen">
+    <section id="journey" className="py-20 md:py-32 px-6 bg-[#050a15] min-h-screen">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
-        <div className="w-full lg:w-1/2 relative lg:sticky top-24 lg:top-32 h-auto pt-2 pb-8 lg:h-[60vh] flex flex-col items-center justify-center z-0">
+        <div className="w-full lg:w-1/2 relative lg:sticky top-24 lg:top-32 h-auto pt-0 pb-8 lg:h-[60vh] flex flex-col items-center justify-center z-0">
           <div className="relative w-full max-w-[280px] lg:max-w-[400px] aspect-square mx-auto rounded-full border border-white/5 bg-navy-900/10 flex items-center justify-center overflow-visible">
              <motion.div
               initial={{ opacity: 0 }}
@@ -123,7 +122,7 @@ export default function Journey() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-10%" }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <motion.div
                     onViewportEnter={() => setActiveIndex(index)}

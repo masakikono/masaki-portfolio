@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 px-4 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-16">
       <div className="w-full md:w-[40%] flex justify-center md:sticky md:top-32">
-        <div className="relative w-full max-w-[320px] aspect-[3/4] overflow-hidden rounded-2xl filter brightness-90 contrast-110 shadow-2xl">
+        <div className="relative w-full max-w-[440px] aspect-[3/4] overflow-hidden rounded-2xl filter brightness-90 contrast-110 shadow-2xl">
           <Image 
             src="/images/blue-lagoon-sign.jpg" 
             alt="Masaki Kono with Coffee Cup"

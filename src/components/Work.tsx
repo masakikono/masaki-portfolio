@@ -32,22 +32,68 @@ const Work = () => {
         <div className="w-full md:w-1/2 min-h-[300px] md:min-h-full relative bg-neutral-900 flex items-center justify-center p-8 group">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-800/50 to-neutral-900 z-0"></div>
           
-          {/* Animated placeholder for the demo */}
-          <div className="relative z-10 w-full h-full border border-dashed border-white/20 rounded-xl flex flex-col items-center justify-center gap-4 bg-black/20 overflow-hidden group-hover:border-[#daa520]/50 transition-colors">
-            <Cpu className="w-8 h-8 text-neutral-500 group-hover:text-[#daa520] transition-colors duration-500" />
-            <span className="text-xs tracking-widest text-neutral-500 uppercase font-medium">Demo Video Placeholder</span>
+          {/* Dynamic AI Roasting Visualization */}
+          <div className="relative z-10 w-full h-full border border-white/10 rounded-xl flex flex-col items-center justify-center bg-black/40 overflow-hidden group-hover:border-[#daa520]/30 transition-colors">
             
-            {/* Visual representation of the AI analyzing a roast curve */}
-            <div className="absolute bottom-0 w-full h-24 flex items-end px-4 gap-1 opacity-20">
-              {[40, 60, 45, 80, 55, 90, 70, 100].map((h, i) => (
-                <motion.div 
-                  key={i} 
-                  className="w-full bg-[#daa520] rounded-t-sm"
-                  initial={{ height: "10%" }}
-                  animate={{ height: `${h}%` }}
-                  transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.5 + (i * 0.2), ease: "easeInOut" }}
+            {/* Grid background */}
+            <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: "linear-gradient(#daa520 1px, transparent 1px), linear-gradient(90deg, #daa520 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
+            
+            {/* Scanning Line */}
+            <motion.div 
+              className="absolute left-0 right-0 h-0.5 bg-[#daa520]/50 z-20"
+              animate={{ top: ["0%", "100%", "0%"] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            />
+
+            <div className="relative z-10 flex flex-col items-center gap-4">
+              <motion.div
+                animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Cpu className="w-12 h-12 text-[#daa520]" />
+              </motion.div>
+              <div className="flex flex-col items-center">
+                <span className="text-[10px] tracking-[0.3em] text-[#daa520] uppercase font-bold mb-1">AI Analyzing</span>
+                <div className="flex gap-1">
+                   <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity }} className="w-1 h-1 bg-[#daa520] rounded-full"></motion.span>
+                   <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0.2 }} className="w-1 h-1 bg-[#daa520] rounded-full"></motion.span>
+                   <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0.4 }} className="w-1 h-1 bg-[#daa520] rounded-full"></motion.span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Live Roast Curve Simulation */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-30 px-8 pointer-events-none">
+              <svg viewBox="0 0 400 200" className="w-full h-full overflow-visible">
+                <motion.path 
+                  d="M0,180 Q80,170 120,100 T240,40 T400,20" 
+                  fill="none" 
+                  stroke="#daa520" 
+                  strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 />
-              ))}
+                {/* Data point indicators */}
+                {[50, 120, 240, 350].map((x, i) => (
+                  <motion.circle 
+                    key={i}
+                    cx={x}
+                    cy={180 - (x/2.5)}
+                    r="3"
+                    fill="#fff"
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                  />
+                ))}
+              </svg>
+            </div>
+
+            {/* Floating Data Bits */}
+            <div className="absolute top-4 left-4 font-mono text-[8px] text-[#daa520]/40 space-y-1">
+              <div>TEMP: 198.4°C</div>
+              <div>ROR: +12.5</div>
+              <div>PHASE: MAILLARD</div>
             </div>
           </div>
         </div>

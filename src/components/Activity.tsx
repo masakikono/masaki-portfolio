@@ -12,16 +12,16 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 const Activity = () => {
   return (
-    <div className="w-full max-w-full min-w-0 overflow-hidden mt-16 pt-16 border-t border-white/5 relative">
+    <div className="w-full max-w-full min-w-0 overflow-hidden mt-24 pt-16 border-t border-white/5 relative">
       <div className="flex items-center gap-3 mb-8">
-        <div className="p-2 bg-[#216e39]/10 rounded-lg">
-          <ActivityIcon className="w-5 h-5 text-[#216e39]" />
+        <div className="p-2 bg-[#daa520]/10 rounded-lg">
+          <ActivityIcon className="w-5 h-5 text-[#daa520]" />
         </div>
-        <h3 className="text-sm font-semibold tracking-[0.2em] uppercase text-white">Continuous Delivery</h3>
+        <h3 className="text-sm font-semibold tracking-[0.2em] uppercase text-white">Daily Output</h3>
       </div>
       
-      <p className="text-sm font-light text-neutral-400 mb-8 leading-relaxed">
-        Consistent effort is what turns raw ambition into professional value. Below is a real-time visualization of my daily coding and documentation contributions across GitHub over the past year.
+      <p className="text-sm font-light text-neutral-400 mb-10 leading-relaxed max-w-3xl">
+        Consistent execution transforms raw ambition into tangible value. Below is a real-time visualization of my engineering and documentation output across GitHub over the past year.
       </p>
 
       {/* GitHub Contributions SVG from ghchart API */}
@@ -44,7 +44,7 @@ const Activity = () => {
         </div>
         
         <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-neutral-500 font-mono tracking-widest uppercase">
-          <a href="https://github.com/masakikono" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#216e39] transition-colors">
+          <a href="https://github.com/masakikono" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#daa520] transition-colors">
             <GithubIcon className="w-3 h-3" />
             @masakikono
           </a>

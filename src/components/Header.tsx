@@ -9,7 +9,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: t.nav.about, href: "/about" },
+    { label: t.nav.about, href: "/" },
     { label: t.nav.journey, href: "/journey" },
     { label: t.nav.bench, href: "/bench" },
     { label: t.nav.portfolio, href: "/portfolio" },
@@ -40,7 +40,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className="text-muted hover:text-foreground transition-colors hover:-translate-y-0.5 transform duration-300">
+            <Link key={item.label} href={item.href} className="text-muted hover:text-foreground transition-colors duration-300">
               {item.label}
             </Link>
           ))}

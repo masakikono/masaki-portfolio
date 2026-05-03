@@ -18,15 +18,7 @@ const Insights = () => {
       setArticles(insightsData.articles);
     }
 
-    // Try fetching live RSS
-    fetch("/api/insights")
-      .then(res => res.json())
-      .then(data => {
-        if (data.articles && data.articles.length > 0) {
-          setArticles(data.articles);
-        }
-      })
-      .catch(err => console.error("Could not fetch RSS:", err));
+    // Note: We use static popular articles defined in translations.ts per user request.
   }, [insightsData]);
 
   if (!insightsData || articles.length === 0) return null;

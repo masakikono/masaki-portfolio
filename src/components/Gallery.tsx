@@ -20,7 +20,7 @@ const breakpointColumnsObj = {
 
 const Gallery = () => {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="portfolio" className="py-24 px-6 max-w-7xl mx-auto">
       <h2 className="text-sm md:text-base font-medium mb-16 tracking-[0.3em] uppercase text-muted text-center">Portfolio</h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -30,7 +30,7 @@ const Gallery = () => {
               src={img.src}
               alt={img.alt}
               fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale hover:grayscale-0"
               loading="lazy"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />

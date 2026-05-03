@@ -12,18 +12,18 @@ export const translations = {
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Coffee x AI x Traveler",
-      tagline: "Bridging Specialty Coffee and Technology.",
-      valueProp: "ロンドン仕込みのホスピタリティと、最新のフロントエンド技術で、ビジネスの課題を解決する。",
+      subtitle: "Coffee Professional / AI Strategist / Traveler",
+      tagline: "Specialty Coffee, Strategic Sales, and AI Innovation.",
+      valueProp: "ロンドン仕込みのホスピタリティと、AIを活用した戦略設計。珈琲と技術を横断し、価値を創造する。",
       scroll: "SCROLL"
     },
     about: {
       title: "IDENTITY",
-      content: `Coffee × AI × 旅人。外資メーカーの営業、フィリピン・メルボルンでの留学、東京でのエンジニア経験。紆余曲折を経て、現在はロンドンで「旅するコーヒーマン」として活動しています。
+      content: `Coffee × AI × 旅人。世界各国のカフェシーンで培った技術と、AIによる業務効率化・戦略立案を武器にする「旅するコーヒーマン」。
 
-私にとってコーヒーは単なる飲料ではなく、農園から一杯のカップまで続く深い探求の旅です。エンジニアとしての視点は、その探求をより精密にし、言語化するための強力な武器になっています。
+単なるバリスタやエンジニアの枠を超え、農園から一杯のカップ、そしてデジタルプロダクトの設計まで、一貫した思想で「プロセス」をデザインします。
 
-「机上の空論よりも、自らの体感と失敗から得たデータを信じる」その実体験至上主義を胸に、世界のどこかで今日も、最高の一杯と新しいコードを追求しています。`
+「やってみないとわからない」という実体験至上主義を胸に、世界のどこかで今日も、最高の一杯と新しい解決策を追求しています。`
     },
     work: {
       title: "CASE STUDIES",
@@ -84,20 +84,41 @@ export const translations = {
       content: "プロフェッショナルな抽出を支える、こだわり抜いたコーヒー器具をセレクトしています。",
       items: [
         {
+          id: "stork-coffee-beans",
+          name: "Stork Coffee Roasters (Whole Bean)",
+          price: "Coming Soon",
+          description: "独自のプロファイルで焙煎されたスペシャルティコーヒー豆。現在販売準備中です。",
+          image: "/images/kaf-coffee.jpg",
+          checkoutUrl: "#",
+          buttonText: "COMING SOON",
+          disabled: true
+        },
+        {
           id: "beandy-dripper",
           name: "BEANDY Dripper",
           price: "¥4,800",
           description: "2026年より日本代理店を務める、新世代のコーヒードリッパー。安定した抽出とクリーンな味わいを実現します。",
           image: "/images/blue-lagoon-drink.jpg",
-          checkoutUrl: "https://shop.masakikono.com/products/beandy"
+          checkoutUrl: "https://beandycoffee.com/",
+          buttonText: "VIEW ON BEANDYCOFFEE.COM"
         },
         {
-          id: "oslo-light-roast",
-          name: "Oslo Selection (Whole Bean)",
-          price: "¥2,800",
-          description: "北欧の焙煎哲学に基づいた、果実味あふれる浅煎りコーヒー。現地ロースターとのコラボレーションモデル。",
-          image: "/images/kaf-coffee.jpg",
-          checkoutUrl: "https://shop.masakikono.com/products/oslo-selection"
+          id: "portrait-photography",
+          name: "Portrait Photography",
+          price: "Custom",
+          description: "ポートレート撮影の依頼を受け付けています。あなたの自然な魅力を引き出す1枚を撮影します。",
+          image: "/images/blue-lagoon-sign.jpg",
+          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          buttonText: "CONTACT FOR DETAILS"
+        },
+        {
+          id: "wh-migration-consulting",
+          name: "Overseas WH / Migration Consulting",
+          price: "Custom",
+          description: "海外でのワーキングホリデーや移住に関するコンサルティング。実体験に基づいたリアルなアドバイスを提供します。",
+          image: "/images/Iceland.jpg",
+          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          buttonText: "BOOK A CONSULTATION"
         }
       ],
       buyNow: "購入する",
@@ -108,24 +129,24 @@ export const translations = {
       content: "日々の開発や焙煎、海外生活での気づきを言語化し、体系的なナレッジとして発信しています。",
       articles: [
         {
-          date: "2026.03",
-          category: "AI & Tech",
-          title: "Master Prompt Generation Pipeline: AIとの対話品質を極限まで高める設計",
-          link: "https://note.com/masakikono_3_0",
-          image: "/images/laughing-laptop.jpg"
+          date: "2024.03",
+          category: "Coffee",
+          title: "BEANDY Silk Dripper | 友人自作のドリッパーを勝手にレビュー",
+          link: "https://note.com/masaki_19931015/n/n8eccb7cfd839",
+          image: "/images/blue-lagoon-drink.jpg"
         },
         {
-          date: "2026.03",
+          date: "2024.02",
           category: "LifeHack",
           title: "アトピーと食事によるパフォーマンス改善（生存戦略）",
-          link: "https://note.com/masakikono_3_0",
+          link: "https://note.com/masaki_19931015/n/n38fa05000094",
           image: "/images/Iceland.jpg"
         },
         {
-          date: "2025.10",
-          category: "Coffee",
-          title: "Specialty Coffeeの抽出論理とフロントエンド設計の共通点",
-          link: "https://note.com/masakikono_3_0",
+          date: "2024.01",
+          category: "Career",
+          title: "メルボルンでバリスタの仕事が見つかって思うこと",
+          link: "https://note.com/masaki_19931015/n/n005581aa2811",
           image: "/images/kaf-coffee.jpg"
         }
       ],
@@ -154,14 +175,14 @@ export const translations = {
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Coffee x AI x Traveler",
-      tagline: "Bridging Specialty Coffee and Technology.",
-      valueProp: "Solving business challenges with London-crafted hospitality and cutting-edge frontend technology.",
+      subtitle: "Coffee Professional / AI Strategist / Traveler",
+      tagline: "Specialty Coffee. Strategic Sales. AI Innovation.",
+      valueProp: "Bridging world-class hospitality and AI-driven architecture. Designing premium experiences that transcend physical and digital boundaries.",
       scroll: "SCROLL"
     },
     about: {
       title: "IDENTITY",
-      content: "Coffee x AI x Traveler. From sales at a foreign manufacturer to studying in Cebu and Melbourne, followed by engineering in Tokyo. My journey has been non-linear, and I now operate as an 'eternal walking coffee traveler' based in London. To me, coffee is not just a beverage; it is a deep journey of exploration from the farm to the cup. My background as an engineer provides a precise lens to understand and articulate this exploration. Guided by the principle of 'experience over speculation,' I pursue the perfect pour and clean code wherever my journey takes me."
+      content: "Coffee. AI. Global Nomad. Operating at the intersection of specialty coffee and software engineering. I transcend the traditional boundaries of a barista or developer—architecting processes from farm to cup, and from concept to digital product. Driven by a 'practical experience first' ethos, I pursue the perfect pour and innovative solutions wherever my journey takes me."
     },
     work: {
       title: "CASE STUDIES",
@@ -222,20 +243,41 @@ export const translations = {
       content: "Selecting high-performance coffee tools that support professional extraction and consistent quality.",
       items: [
         {
+          id: "stork-coffee-beans",
+          name: "Stork Coffee Roasters (Whole Bean)",
+          price: "Coming Soon",
+          description: "Specialty coffee beans roasted with our proprietary profiles. Currently preparing for launch.",
+          image: "/images/kaf-coffee.jpg",
+          checkoutUrl: "#",
+          buttonText: "COMING SOON",
+          disabled: true
+        },
+        {
           id: "beandy-dripper",
           name: "BEANDY Dripper",
           price: "£28.00",
           description: "A next-generation dripper that achieves stable flow and clean flavor. Proud sales agent for BEANDY since 2026.",
           image: "/images/blue-lagoon-drink.jpg",
-          checkoutUrl: "https://shop.masakikono.com/products/beandy"
+          checkoutUrl: "https://beandycoffee.com/",
+          buttonText: "VIEW ON BEANDYCOFFEE.COM"
         },
         {
-          id: "oslo-light-roast",
-          name: "Oslo Selection (Whole Bean)",
-          price: "£16.00",
-          description: "Collaboration series with Nordic roasters, featuring the vibrant acidity of the light roast culture.",
-          image: "/images/kaf-coffee.jpg",
-          checkoutUrl: "https://shop.masakikono.com/products/oslo-selection"
+          id: "portrait-photography",
+          name: "Portrait Photography",
+          price: "Custom",
+          description: "Accepting portrait photography requests. Capturing the natural essence and unique story of each individual.",
+          image: "/images/blue-lagoon-sign.jpg",
+          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          buttonText: "CONTACT FOR DETAILS"
+        },
+        {
+          id: "wh-migration-consulting",
+          name: "WH & Migration Consulting",
+          price: "Custom",
+          description: "Consulting services for overseas working holidays and migration. Real advice based on authentic global experiences.",
+          image: "/images/Iceland.jpg",
+          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          buttonText: "BOOK A CONSULTATION"
         }
       ],
       buyNow: "BUY NOW",
@@ -246,24 +288,24 @@ export const translations = {
       content: "Articulating and structuring daily discoveries from software engineering, coffee roasting, and global living into actionable knowledge.",
       articles: [
         {
-          date: "2026.03",
-          category: "AI & Tech",
-          title: "Master Prompt Generation Pipeline: Maximizing Communication Quality with AI",
-          link: "https://note.com/masakikono_3_0",
-          image: "/images/laughing-laptop.jpg"
+          date: "2024.03",
+          category: "Coffee",
+          title: "BEANDY Silk Dripper | Reviewing my friend's custom dripper",
+          link: "https://note.com/masaki_19931015/n/n8eccb7cfd839",
+          image: "/images/blue-lagoon-drink.jpg"
         },
         {
-          date: "2026.03",
+          date: "2024.02",
           category: "LifeHack",
           title: "Performance Optimization through Diet and Atopic Dermatitis Management",
-          link: "https://note.com/masakikono_3_0",
+          link: "https://note.com/masaki_19931015/n/n38fa05000094",
           image: "/images/Iceland.jpg"
         },
         {
-          date: "2025.10",
-          category: "Coffee",
-          title: "The Overlap Between Specialty Coffee Extraction and Frontend Architecture",
-          link: "https://note.com/masakikono_3_0",
+          date: "2024.01",
+          category: "Career",
+          title: "Reflections on Finding a Barista Job in Melbourne",
+          link: "https://note.com/masaki_19931015/n/n005581aa2811",
           image: "/images/kaf-coffee.jpg"
         }
       ],
@@ -271,7 +313,7 @@ export const translations = {
     },
     contact: {
       title: "LET'S TALK ABOUT YOUR PROJECT",
-      content: "From coffee consulting to sophisticated frontend development and AI integration. Let's schedule a 15-min discovery call. Currently highly accepting remote engineering opportunities.",
+      content: "From specialty coffee consulting to sophisticated frontend development and AI integration. Let's explore how we can build something exceptional. Currently accepting remote engineering and AI evaluation opportunities.",
       bookCall: "15-MIN DISCOVERY CALL",
       resume: "DOWNLOAD RESUME"
     },
