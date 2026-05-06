@@ -61,14 +61,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent opacity-60" />
         
         {/* Price Tag */}
-        <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
-          <span className="text-white font-serif tracking-widest">{product.price}</span>
-        </div>
+        {product.price && (
+          <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+            <span className="text-white tracking-widest">{product.price}</span>
+          </div>
+        )}
       </div>
 
       {/* Content */}
       <div className="p-8">
-        <h3 className="text-2xl font-serif text-white mb-3 group-hover:text-[#daa520] transition-colors">
+        <h3 className="text-2xl text-white mb-3 group-hover:text-[#daa520] transition-colors">
           {product.name}
         </h3>
         <p className="text-sm font-light text-neutral-400 mb-8 leading-relaxed line-clamp-2">

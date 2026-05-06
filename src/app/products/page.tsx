@@ -29,7 +29,7 @@ export default function ProductsPage() {
             <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-6xl font-serif text-white text-center mb-8 tracking-tight"
+                className="text-4xl md:text-6xl text-white text-center mb-8 tracking-tight"
             >
                 {productsData.title}
             </motion.h1>

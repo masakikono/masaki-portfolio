@@ -30,7 +30,7 @@ export default function ResumePage() {
         <div className="print:block text-black print:text-black">
           {/* Header */}
           <header className="border-b-2 border-black pb-8 mb-8 text-black">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold uppercase mb-2 text-black">MASAKI KONO</h1>
+            <h1 className="text-4xl md:text-6xl font-bold uppercase mb-2 text-black">MASAKI KONO</h1>
             <h2 className="text-xl tracking-widest text-neutral-600 uppercase mb-8 font-semibold">Coffee × AI × Traveler</h2>
             
             <div className="flex flex-col md:flex-row gap-6 text-sm font-medium text-black">

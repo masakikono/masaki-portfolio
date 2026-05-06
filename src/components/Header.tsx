@@ -90,7 +90,7 @@ const Header = () => {
                   className="text-foreground hover:text-[#daa520] transition-colors flex items-center gap-4 group"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="text-[10px] text-muted group-hover:text-[#daa520] transition-colors">{String(idx + 1).padStart(2, '0')}</span>
+                  
                   {item.label}
                 </Link>
               ))}

@@ -31,7 +31,7 @@ const Activity = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <div className="min-w-[600px] md:min-w-[700px] flex justify-center w-full">
+        <div className="flex justify-center w-full">
           {/* using ghchart public API with custom gold color */}
           <div className="relative w-full opacity-80 hover:opacity-100 transition-opacity flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}

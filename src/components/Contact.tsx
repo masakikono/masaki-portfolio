@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-40 px-6 max-w-5xl mx-auto flex flex-col items-center justify-center text-center mt-12">
-      <h2 className="text-3xl lg:text-5xl font-serif mb-6 text-white">{contactData.title}</h2>
+      <h2 className="text-3xl lg:text-5xl mb-6 text-white">{contactData.title}</h2>
       <p className="text-base md:text-lg font-light text-neutral-400 max-w-2xl mb-16 leading-relaxed">
         {contactData.content}
       </p>

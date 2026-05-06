@@ -66,7 +66,7 @@ const Insights = () => {
                 <span className="text-xs font-mono text-neutral-500">{article.date}</span>
               </div>
 
-              <h3 className="text-xl md:text-2xl font-serif text-white mb-8 group-hover:text-[#daa520] transition-colors relative z-10 leading-snug">
+              <h3 className="text-xl md:text-2xl text-white mb-8 group-hover:text-[#daa520] transition-colors relative z-10 leading-snug">
                 {article.title}
               </h3>
 

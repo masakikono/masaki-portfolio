@@ -109,7 +109,7 @@ const Work = () => {
            <span className="text-[10px] font-bold tracking-widest text-[#daa520] uppercase mb-4 opacity-80">
             {artera.role}
            </span>
-           <h3 className="text-3xl font-serif text-white mb-8">{artera.name}</h3>
+           <h3 className="text-3xl text-white mb-8">{artera.name}</h3>
 
            <div className="space-y-6">
              <div>

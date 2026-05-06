@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Header from "@/components/Header";
@@ -15,11 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 高級感を演出するセリフ体
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Masaki Kono | Coffee Professional & Photographer",
@@ -34,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen bg-background text-foreground flex flex-col font-light selection:bg-neutral-800 selection:text-white overflow-x-hidden w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground flex flex-col font-light selection:bg-neutral-800 selection:text-white overflow-x-hidden w-full`}
       >
         <LanguageProvider>
           <div className="relative w-full overflow-x-hidden flex flex-col min-h-screen">

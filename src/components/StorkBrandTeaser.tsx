@@ -23,7 +23,7 @@ export default function StorkBrandTeaser() {
           <span className="text-xs font-semibold tracking-[0.4em] mb-6 text-[#daa520] uppercase block">
             Coming Soon
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-8 tracking-wide">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-8 tracking-wide">
             Stork Coffee Roasters
           </h2>
           
