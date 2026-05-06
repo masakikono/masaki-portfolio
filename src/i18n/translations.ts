@@ -88,7 +88,7 @@ export const translations = {
           name: "Stork Coffee Roasters (Whole Bean)",
           price: "Coming Soon",
           description: "独自のプロファイルで焙煎されたスペシャルティコーヒー豆。現在販売準備中です。",
-          image: "/images/product_stork_beans.png",
+          image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1000&auto=format&fit=crop",
           checkoutUrl: "#",
           buttonText: "COMING SOON",
           disabled: true
@@ -98,7 +98,7 @@ export const translations = {
           name: "BEANDY Dripper",
           price: "",
           description: "2026年より日本代理店を務める、新世代のコーヒードリッパー。安定した抽出とクリーンな味わいを実現します。",
-          image: "/images/product_beandy_dripper.png",
+          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop",
           checkoutUrl: "https://beandycoffee.com/",
           buttonText: "VIEW ON BEANDYCOFFEE.COM"
         },
@@ -133,7 +133,7 @@ export const translations = {
           category: "Coffee",
           title: "BEANDY Silk Dripper | 友人自作のドリッパーを勝手にレビュー",
           link: "https://note.com/masaki_19931015/n/n8eccb7cfd839",
-          image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop"
         },
         {
           date: "2024.02",
@@ -247,7 +247,7 @@ export const translations = {
           name: "Stork Coffee Roasters (Whole Bean)",
           price: "Coming Soon",
           description: "Specialty coffee beans roasted with our proprietary profiles. Currently preparing for launch.",
-          image: "/images/product_stork_beans.png",
+          image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1000&auto=format&fit=crop",
           checkoutUrl: "#",
           buttonText: "COMING SOON",
           disabled: true
@@ -257,7 +257,7 @@ export const translations = {
           name: "BEANDY Dripper",
           price: "",
           description: "A next-generation dripper that achieves stable flow and clean flavor. Proud sales agent for BEANDY since 2026.",
-          image: "/images/product_beandy_dripper.png",
+          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop",
           checkoutUrl: "https://beandycoffee.com/",
           buttonText: "VIEW ON BEANDYCOFFEE.COM"
         },
@@ -292,7 +292,7 @@ export const translations = {
           category: "Coffee",
           title: "BEANDY Silk Dripper | Reviewing my friend's custom dripper",
           link: "https://note.com/masaki_19931015/n/n8eccb7cfd839",
-          image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop"
         },
         {
           date: "2024.02",
