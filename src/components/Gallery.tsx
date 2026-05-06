@@ -2,42 +2,68 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const MOCK_IMAGES = [
-  { id: 1, src: "/images/laughing-outdoors.jpg", alt: "Masaki laughing outdoors", width: 600, height: 800 },
-  { id: 2, src: "/images/kaf-coffee.jpg", alt: "KAF Coffee", width: 600, height: 450 },
-  { id: 3, src: "/images/blue-lagoon-drink.jpg", alt: "Blue lagoon lagoon drink", width: 600, height: 600 },
-  { id: 4, src: "/images/laughing-laptop.jpg", alt: "Masaki at laptop", width: 600, height: 800 },
-  { id: 5, src: "/images/blue-lagoon-sign.jpg", alt: "Blue lagoon sign", width: 600, height: 450 },
-  { id: 6, src: "/images/Iceland.jpg", alt: "Iceland landscape", width: 600, height: 800 },
-];
+const GalleryItem = ({ img, index }: { img: any, index: number }) => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, index % 2 === 0 ? -40 : 40]);
 
-const breakpointColumnsObj = {
-  default: 3,
-  1024: 2,
-  640: 1
+  return (
+    <motion.div 
+      style={{ y }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true }}
+      className={`relative overflow-hidden bg-[#0a1525] rounded-[2.5rem] cursor-pointer group shadow-2xl mb-12 w-full ${img.height} border border-white/5`}
+    >
+      <Image
+        src={img.src}
+        alt="Portfolio moment"
+        fill
+        className={`object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 group-hover:scale-105 ${img.position}`}
+        loading="lazy"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <div className="absolute top-10 right-10 w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-[#daa520] transition-colors duration-500" />
+    </motion.div>
+  );
 };
 
 const Gallery = () => {
+  const images = [
+    { id: 1, src: "/images/laughing-outdoors.jpg", height: "h-[600px]", position: "object-[center_15%]" },
+    { id: 2, src: "/images/kaf-coffee.jpg", height: "h-[400px]", position: "object-center" },
+    { id: 3, src: "/images/laughing-laptop.jpg", height: "h-[650px]", position: "object-[center_10%]" },
+    { id: 4, src: "/images/blue-lagoon-sign.jpg", height: "h-[350px]", position: "object-center" },
+    { id: 5, src: "/images/Iceland.jpg", height: "h-[500px]", position: "object-center" },
+    { id: 6, src: "/images/blue-lagoon-drink.jpg", height: "h-[450px]", position: "object-center" },
+  ];
+
   return (
-    <section id="portfolio" className="py-24 px-6 max-w-7xl mx-auto">
-      <h2 className="text-sm md:text-base font-medium mb-16 tracking-[0.3em] uppercase text-muted text-center">Portfolio</h2>
+    <section id="portfolio" className="py-40 px-6 max-w-7xl mx-auto overflow-visible relative">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mb-32"
+      >
+        <span className="text-[10px] font-bold tracking-[0.8em] uppercase text-[#daa520] mb-6 block">Gallery</span>
+        <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight uppercase">
+          Portfolio
+        </h2>
+      </motion.div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {MOCK_IMAGES.map((img) => (
-          <div key={img.id} className="relative group overflow-hidden bg-neutral-900 rounded-sm aspect-[4/5] w-full">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale hover:grayscale-0"
-              loading="lazy"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-            {/* Subtle overlay on hover */}
-            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </div>
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-10 space-y-10">
+        {images.map((img, index) => (
+          <GalleryItem key={img.id} img={img} index={index} />
         ))}
+      </div>
+
+      <div className="mt-48 text-center opacity-10">
+         <span className="text-[10px] font-bold tracking-[1.5em] text-white uppercase">Archive 2024</span>
       </div>
     </section>
   );

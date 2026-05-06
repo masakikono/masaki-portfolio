@@ -73,11 +73,11 @@ export const translations = {
       ]
     },
     bench: {
-        title: "ROAST CALCULATOR",
-        description: "数値を入力して焙煎のプロファイルとDevelopment（現像率）をシミュレーションできるインタラクティブなダッシュボードです。",
-        currentlyBrewing: "ROAST PROFILE INPUTS",
-        roastProfile: "ROAST VISUALIZATION",
-        notes: "NOTES"
+        title: "EY CALCULATOR",
+        description: "豆の量、抽出量、TDS（濃度）から、瞬時に抽出収率（Extraction Yield）を計算します。理想的な一杯を科学的に再現するためのバリスタツールです。",
+        currentlyBrewing: "BREW PARAMETERS",
+        roastProfile: "EXTRACTION ANALYSIS",
+        notes: "BREW RATIO"
     },
     products: {
       title: "CURATED PRODUCTS",
@@ -88,7 +88,7 @@ export const translations = {
           name: "Stork Coffee Roasters (Whole Bean)",
           price: "Coming Soon",
           description: "独自のプロファイルで焙煎されたスペシャルティコーヒー豆。現在販売準備中です。",
-          image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
           checkoutUrl: "#",
           buttonText: "COMING SOON",
           disabled: true
@@ -98,7 +98,7 @@ export const translations = {
           name: "BEANDY Dripper",
           price: "",
           description: "2026年より日本代理店を務める、新世代のコーヒードリッパー。安定した抽出とクリーンな味わいを実現します。",
-          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
           checkoutUrl: "https://beandycoffee.com/",
           buttonText: "VIEW ON BEANDYCOFFEE.COM"
         },
@@ -107,7 +107,7 @@ export const translations = {
           name: "Portrait Photography",
           price: "Custom",
           description: "ポートレート撮影の依頼を受け付けています。あなたの自然な魅力を引き出す1枚を撮影します。",
-          image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
           checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
           buttonText: "CONTACT FOR DETAILS"
         },
@@ -116,7 +116,7 @@ export const translations = {
           name: "Overseas WH / Migration Consulting",
           price: "Custom",
           description: "海外でのワーキングホリデーや移住に関するコンサルティング。実体験に基づいたリアルなアドバイスを提供します。",
-          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
           checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
           buttonText: "BOOK A CONSULTATION"
         }
@@ -133,21 +133,21 @@ export const translations = {
           category: "Coffee",
           title: "BEANDY Silk Dripper | 友人自作のドリッパーを勝手にレビュー",
           link: "https://note.com/masaki_19931015/n/n8eccb7cfd839",
-          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800&v=6"
         },
         {
           date: "2024.02",
           category: "LifeHack",
           title: "アトピーと食事によるパフォーマンス改善（生存戦略）",
           link: "https://note.com/masaki_19931015/n/n38fa05000094",
-          image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&q=80&w=1000&v=2"
         },
         {
           date: "2024.01",
           category: "Career",
           title: "メルボルンでバリスタの仕事が見つかって思うこと",
           link: "https://note.com/masaki_19931015/n/n005581aa2811",
-          image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800&v=6"
         }
       ],
       readMore: "READ ON NOTE"
@@ -232,11 +232,11 @@ export const translations = {
       ]
     },
     bench: {
-        title: "ROAST CALCULATOR",
-        description: "An interactive dashboard that simulates roast development and visualizes the curve based on your inputs.",
-        currentlyBrewing: "ROAST PROFILE INPUTS",
-        roastProfile: "ROAST VISUALIZATION",
-        notes: "NOTES"
+        title: "EY CALCULATOR",
+        description: "Instantly calculate Extraction Yield from dose, yield, and TDS. A professional barista tool to scientifically reproduce the perfect cup.",
+        currentlyBrewing: "BREW PARAMETERS",
+        roastProfile: "EXTRACTION ANALYSIS",
+        notes: "BREW RATIO"
     },
     products: {
       title: "CURATED PRODUCTS",
@@ -247,7 +247,7 @@ export const translations = {
           name: "Stork Coffee Roasters (Whole Bean)",
           price: "Coming Soon",
           description: "Specialty coffee beans roasted with our proprietary profiles. Currently preparing for launch.",
-          image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
           checkoutUrl: "#",
           buttonText: "COMING SOON",
           disabled: true
@@ -257,7 +257,7 @@ export const translations = {
           name: "BEANDY Dripper",
           price: "",
           description: "A next-generation dripper that achieves stable flow and clean flavor. Proud sales agent for BEANDY since 2026.",
-          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
           checkoutUrl: "https://beandycoffee.com/",
           buttonText: "VIEW ON BEANDYCOFFEE.COM"
         },
@@ -266,7 +266,7 @@ export const translations = {
           name: "Portrait Photography",
           price: "Custom",
           description: "Accepting portrait photography requests. Capturing the natural essence and unique story of each individual.",
-          image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
           checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
           buttonText: "CONTACT FOR DETAILS"
         },
@@ -275,7 +275,7 @@ export const translations = {
           name: "WH & Migration Consulting",
           price: "Custom",
           description: "Consulting services for overseas working holidays and migration. Real advice based on authentic global experiences.",
-          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1000&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
           checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
           buttonText: "BOOK A CONSULTATION"
         }
@@ -292,21 +292,21 @@ export const translations = {
           category: "Coffee",
           title: "BEANDY Silk Dripper | Reviewing my friend's custom dripper",
           link: "https://note.com/masaki_19931015/n/n8eccb7cfd839",
-          image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800&v=6"
         },
         {
           date: "2024.02",
           category: "LifeHack",
           title: "Performance Optimization through Diet and Atopic Dermatitis Management",
           link: "https://note.com/masaki_19931015/n/n38fa05000094",
-          image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&q=80&w=1000&v=2"
         },
         {
           date: "2024.01",
           category: "Career",
           title: "Reflections on Finding a Barista Job in Melbourne",
           link: "https://note.com/masaki_19931015/n/n005581aa2811",
-          image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1000&auto=format&fit=crop"
+          image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800&v=6"
         }
       ],
       readMore: "READ ON NOTE"

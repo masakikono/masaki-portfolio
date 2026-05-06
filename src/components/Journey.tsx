@@ -20,7 +20,7 @@ export default function Journey() {
   const locations = [
     { top: "30%", left: "45%", label: "London" },
     { top: "25%", left: "48%", label: "Oslo" },
-    { top: "78%", left: "82%", label: "Melbourne" },
+    { top: "70%", left: "75%", label: "Melbourne" },
     { top: "45%", left: "78%", label: "Tokyo" },
     { top: "40%", left: "76%", label: "Japan" }
   ];
