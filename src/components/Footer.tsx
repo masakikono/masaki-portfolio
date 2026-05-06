@@ -17,6 +17,12 @@ const NoteIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const SubstackIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.078V0z" />
+  </svg>
+);
+
 const Footer = () => {
   const { t } = useLanguage();
   return (
@@ -34,6 +40,10 @@ const Footer = () => {
           <a href="https://note.com/masaki_19931015" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
             <NoteIcon className="w-5 h-5" />
             <span className="sr-only">Note</span>
+          </a>
+          <a href="https://substack.com/@masakikono" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+            <SubstackIcon className="w-5 h-5" />
+            <span className="sr-only">Substack</span>
           </a>
         </div>
         

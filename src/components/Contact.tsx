@@ -19,10 +19,9 @@ const Contact = () => {
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    data.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string;
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
@@ -46,38 +45,19 @@ const Contact = () => {
 
       {/* Main Call To Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-6 mb-24 w-full justify-center">
-        <button 
-          onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/...', '_blank')}
-          className="group relative overflow-hidden bg-white text-black px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-white transition-transform hover:-translate-y-1 cursor-pointer"
-        >
-          <div className="absolute inset-0 bg-[#daa520] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-          <Calendar className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
-          <span className="text-xs font-bold tracking-[0.2em] uppercase relative z-10 group-hover:text-white transition-colors duration-300">
-            {contactData.bookCall || "BOOK A SESSION (GOOGLE CALENDAR)"}
-          </span>
-        </button>
-
         <a 
-          href="/resume"
+          href="https://www.linkedin.com/in/masakikono19931015/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative overflow-hidden bg-transparent text-white px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-border hover:border-white transition-all hover:-translate-y-1"
+          className="group relative overflow-hidden bg-white text-black px-8 py-5 rounded-sm flex items-center justify-center gap-3 w-full sm:w-auto min-w-[280px] border border-white transition-transform hover:-translate-y-1"
         >
-          <Download className="w-5 h-5" />
-          <span className="text-xs font-bold tracking-[0.2em] uppercase">
-            {contactData.resume || "VIEW RESUME (PRINTABLE)"}
+          <div className="absolute inset-0 bg-[#daa520] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
+          <svg className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase relative z-10 group-hover:text-white transition-colors duration-300">
+            {contactData.resume || "LINKEDIN PROFILE"}
           </span>
         </a>
       </div>
-
-      {isCalendlyOpen && (
-        <PopupModal
-          url="https://calendly.com/masakikono/15min"
-          onModalClose={() => setIsCalendlyOpen(false)}
-          open={isCalendlyOpen}
-          rootElement={document.getElementById('__next') || document.body}
-        />
-      )}
 
       {/* Direct Message Form (Fallback) */}
       <div className="w-full max-w-lg border-t border-white/5 pt-16">
@@ -87,10 +67,10 @@ const Contact = () => {
 
         <div className="flex flex-col space-y-6 text-center bg-white/5 border border-white/5 p-8 rounded-2xl backdrop-blur-sm">
           <p className="text-sm font-light text-neutral-400">
-            お仕事のご依頼やお問い合わせは、以下のメールアドレス、またはInstagramのDMよりお気軽にご連絡ください。
+            コンサルティングのご依頼やカジュアル面談のお問い合わせは、以下のメールアドレス、またはInstagramのDMよりお気軽にご連絡ください。
           </p>
           <a
-            href="mailto:masaki_19931015@yahoo.co.jp"
+            href="mailto:masaki19931015@gmail.com"
             className="border border-[#daa520] text-[#daa520] px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#daa520] hover:text-[#050a15] transition-all duration-300 mx-auto w-full md:w-auto"
           >
             SEND AN EMAIL

@@ -108,7 +108,7 @@ export const translations = {
           price: "Custom",
           description: "ポートレート撮影の依頼を受け付けています。あなたの自然な魅力を引き出す1枚を撮影します。",
           image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portrait%20Photography%20Request",
           buttonText: "CONTACT FOR DETAILS"
         },
         {
@@ -117,7 +117,7 @@ export const translations = {
           price: "Custom",
           description: "海外でのワーキングホリデーや移住に関するコンサルティング。実体験に基づいたリアルなアドバイスを提供します。",
           image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=WH/Migration%20Consulting%20Inquiry",
           buttonText: "BOOK A CONSULTATION"
         }
       ],
@@ -154,9 +154,9 @@ export const translations = {
     },
     contact: {
       title: "LET'S TALK ABOUT YOUR PROJECT",
-      content: "珈琲のコンサルティング、フロントエンド開発、AI導入など、まずは15分のカジュアル面談でお話しませんか？現在リモートエンジニアリングの案件を優先してお受けしています。",
+      content: "コーヒー関連のコンサルティング、または15分のカジュアル面談を受け付けております。お気軽にご連絡ください。",
       bookCall: "15-MIN DISCOVERY CALL",
-      resume: "DOWNLOAD RESUME"
+      resume: "LINKEDIN PROFILE"
     },
     footer: {
       builtWith: "Designed & Built with AI"
@@ -267,7 +267,7 @@ export const translations = {
           price: "Custom",
           description: "Accepting portrait photography requests. Capturing the natural essence and unique story of each individual.",
           image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portrait%20Photography%20Request",
           buttonText: "CONTACT FOR DETAILS"
         },
         {
@@ -276,7 +276,7 @@ export const translations = {
           price: "Custom",
           description: "Consulting services for overseas working holidays and migration. Real advice based on authentic global experiences.",
           image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/...",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=WH/Migration%20Consulting%20Inquiry",
           buttonText: "BOOK A CONSULTATION"
         }
       ],
@@ -313,9 +313,9 @@ export const translations = {
     },
     contact: {
       title: "LET'S TALK ABOUT YOUR PROJECT",
-      content: "From specialty coffee consulting to sophisticated frontend development and AI integration. Let's explore how we can build something exceptional. Currently accepting remote engineering and AI evaluation opportunities.",
+      content: "Accepting coffee-related consulting or 15-minute casual discovery calls. Please feel free to reach out.",
       bookCall: "15-MIN DISCOVERY CALL",
-      resume: "DOWNLOAD RESUME"
+      resume: "LINKEDIN PROFILE"
     },
     footer: {
       builtWith: "Designed & Built with AI"

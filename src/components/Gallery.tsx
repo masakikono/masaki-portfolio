@@ -42,7 +42,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-40 px-6 max-w-7xl mx-auto overflow-visible relative">
+    <section id="portfolio" className="pt-12 pb-32 px-6 max-w-7xl mx-auto overflow-visible relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
