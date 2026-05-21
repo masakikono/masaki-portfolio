@@ -1,7 +1,7 @@
-/* eslint-disable */
-// @ts-ignore
 import Parser from "rss-parser";
 import { NextResponse } from "next/server";
+
+export const revalidate = 3600; // Cache for 1 hour
 
 export async function GET() {
   const parser = new Parser({
