@@ -77,48 +77,34 @@ export const translations = {
         description: "豆の量、抽出量、TDS（濃度）から、瞬時に抽出収率（Extraction Yield）を計算します。理想的な一杯を科学的に再現するためのバリスタツールです。",
         currentlyBrewing: "BREW PARAMETERS",
         roastProfile: "EXTRACTION ANALYSIS",
-        notes: "BREW RATIO"
+        notes: "BREW RATIO",
+        insights: {
+          under: "抽出不足（アンダー）の傾向です。より細かい挽き目にするか、温度を上げる、または抽出時間を延ばすことを検討してください。",
+          over: "過抽出（オーバー）の傾向です。粗めの挽き目にするか、温度を下げる、または抽出を早めに切り上げることで調整してください。",
+          ideal: "理想的な収率です。豆のポテンシャルと甘みが最もバランス良く表現されているポイントです。"
+        }
     },
     products: {
       title: "CURATED PRODUCTS",
       content: "プロフェッショナルな抽出を支える、こだわり抜いたコーヒー器具をセレクトしています。",
       items: [
         {
-          id: "stork-coffee-beans",
-          name: "Stork Coffee Roasters (Whole Bean)",
-          price: "Coming Soon",
-          description: "独自のプロファイルで焙煎されたスペシャルティコーヒー豆。現在販売準備中です。",
-          image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
-          checkoutUrl: "#",
-          buttonText: "COMING SOON",
-          disabled: true
-        },
-        {
-          id: "beandy-dripper",
-          name: "BEANDY Dripper",
-          price: "",
-          description: "2026年より日本代理店を務める、新世代のコーヒードリッパー。安定した抽出とクリーンな味わいを実現します。",
-          image: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
-          checkoutUrl: "https://beandycoffee.com/",
-          buttonText: "VIEW ON BEANDYCOFFEE.COM"
-        },
-        {
           id: "portrait-photography",
-          name: "Portrait Photography",
-          price: "Custom",
-          description: "ポートレート撮影の依頼を受け付けています。あなたの自然な魅力を引き出す1枚を撮影します。",
+          name: "ポートフォリオ撮影 (Portfolio Photography)",
+          price: "¥3,000",
+          description: "あなたの自然な魅力とプロフェッショナルな一面を引き出すポートレート撮影を行います。",
           image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portrait%20Photography%20Request",
-          buttonText: "CONTACT FOR DETAILS"
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=ポートフォリオ撮影のご依頼",
+          buttonText: "詳細を問い合わせる"
         },
         {
           id: "wh-migration-consulting",
-          name: "Overseas WH / Migration Consulting",
-          price: "Custom",
-          description: "海外でのワーキングホリデーや移住に関するコンサルティング。実体験に基づいたリアルなアドバイスを提供します。",
+          name: "ワーホリ・移住コンサル相談",
+          price: "¥1,500 / 30分",
+          description: "海外でのワーキングホリデーや移住に関する個別コンサルティング。実体験に基づいたリアルな戦略とアドバイスを提供します。",
           image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=WH/Migration%20Consulting%20Inquiry",
-          buttonText: "BOOK A CONSULTATION"
+          checkoutUrl: "https://calendar.app.google/ekrsVZwBTgKx9YnV8",
+          buttonText: "予約する (Google Calendar)"
         }
       ],
       buyNow: "購入する",
@@ -236,47 +222,33 @@ export const translations = {
         description: "Instantly calculate Extraction Yield from dose, yield, and TDS. A professional barista tool to scientifically reproduce the perfect cup.",
         currentlyBrewing: "BREW PARAMETERS",
         roastProfile: "EXTRACTION ANALYSIS",
-        notes: "BREW RATIO"
+        notes: "BREW RATIO",
+        insights: {
+          under: "Indicative of under-extraction. Consider using a finer grind, increasing water temperature, or extending the brew time.",
+          over: "Indicative of over-extraction. Consider using a coarser grind, lowering water temperature, or cutting the brew slightly shorter.",
+          ideal: "Ideal extraction yield. This is the sweet spot where the coffee's potential and sweetness are most balanced."
+        }
     },
     products: {
       title: "CURATED PRODUCTS",
       content: "Selecting high-performance coffee tools that support professional extraction and consistent quality.",
       items: [
         {
-          id: "stork-coffee-beans",
-          name: "Stork Coffee Roasters (Whole Bean)",
-          price: "Coming Soon",
-          description: "Specialty coffee beans roasted with our proprietary profiles. Currently preparing for launch.",
-          image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
-          checkoutUrl: "#",
-          buttonText: "COMING SOON",
-          disabled: true
-        },
-        {
-          id: "beandy-dripper",
-          name: "BEANDY Dripper",
-          price: "",
-          description: "A next-generation dripper that achieves stable flow and clean flavor. Proud sales agent for BEANDY since 2026.",
-          image: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800&v=6",
-          checkoutUrl: "https://beandycoffee.com/",
-          buttonText: "VIEW ON BEANDYCOFFEE.COM"
-        },
-        {
           id: "portrait-photography",
-          name: "Portrait Photography",
-          price: "Custom",
-          description: "Accepting portrait photography requests. Capturing the natural essence and unique story of each individual.",
+          name: "Portfolio Photography",
+          price: "¥3,000",
+          description: "Professional portrait photography sessions to capture your natural essence and unique story.",
           image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portrait%20Photography%20Request",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portfolio%20Photography%20Request",
           buttonText: "CONTACT FOR DETAILS"
         },
         {
           id: "wh-migration-consulting",
           name: "WH & Migration Consulting",
-          price: "Custom",
-          description: "Consulting services for overseas working holidays and migration. Real advice based on authentic global experiences.",
+          price: "¥1,500 / 30 mins",
+          description: "1-on-1 consulting services for overseas working holidays and migration. Real advice based on authentic global experiences.",
           image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=WH/Migration%20Consulting%20Inquiry",
+          checkoutUrl: "https://calendar.app.google/ekrsVZwBTgKx9YnV8",
           buttonText: "BOOK A CONSULTATION"
         }
       ],

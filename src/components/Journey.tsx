@@ -43,8 +43,8 @@ export default function Journey() {
   };
 
   return (
-    <section id="journey" className="py-20 md:py-32 px-6 bg-[#050a15] min-h-screen">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
+    <section id="journey" className="py-8 pt-12 md:py-32 px-6 bg-[#050a15] min-h-screen">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
         
         {/* Left: Map Visual (Simplified SVG) */}
         <div className="w-full lg:w-1/2 relative lg:sticky top-24 lg:top-32 h-auto pt-0 pb-8 lg:h-[60vh] flex flex-col items-center justify-center z-0">

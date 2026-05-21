@@ -6,7 +6,17 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const GalleryItem = ({ img, index }: { img: any, index: number }) => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, index % 2 === 0 ? -40 : 40]);
+  const [isMobile, setIsMobile] = React.useState(true);
+  
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Disable vertical parallax on mobile to prevent images from overlapping
+  const y = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : (index % 2 === 0 ? -40 : 40)]);
 
   return (
     <motion.div 
@@ -15,7 +25,7 @@ const GalleryItem = ({ img, index }: { img: any, index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true }}
-      className={`relative overflow-hidden bg-[#0a1525] rounded-[2.5rem] cursor-pointer group shadow-2xl mb-12 w-full ${img.height} border border-white/5`}
+      className={`relative overflow-hidden bg-[#0a1525] rounded-[2.5rem] cursor-pointer group shadow-2xl mb-12 w-full break-inside-avoid inline-block ${img.height} border border-white/5`}
     >
       <Image
         src={img.src}

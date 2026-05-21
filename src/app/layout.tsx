@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Masaki Kono | Coffee Professional & Photographer",
-  description: "Personal portfolio of Masaki Kono. Roaster, Barista, and Photographer.",
+  title: "Masaki Kono | Coffee Professional & AI Developer",
+  description: "Personal portfolio of Masaki Kono. Seamlessly bridging world-class specialty coffee, B2B sales experience, and AI-driven software development.",
 };
 
 export default function RootLayout({

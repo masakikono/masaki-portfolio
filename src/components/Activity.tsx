@@ -36,7 +36,7 @@ const Activity = () => {
           <div className="relative w-full opacity-80 hover:opacity-100 transition-opacity flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
-              src="https://ghchart.rshah.org/216e39/masakikono" 
+              src="https://ghchart.rshah.org/daa520/masakikono" 
               alt="Masaki Kono's GitHub Contributions" 
               className="w-full h-auto max-w-[800px] filter drop-shadow-md mix-blend-screen"
             />

@@ -337,9 +337,9 @@ const BaristaBench = () => {
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-[0.3em] text-[#daa520] uppercase">Brewing Insight</span>
                 <p className="text-base md:text-lg text-white font-light leading-relaxed">
-                  {ey < 18 ? "抽出不足（アンダー）の傾向です。より細かい挽き目にするか、温度を上げる、または抽出時間を延ばすことを検討してください。" :
-                   ey > 22 ? "過抽出（オーバー）の傾向です。粗めの挽き目にするか、温度を下げる、または抽出を早めに切り上げることで調整してください。" :
-                   "理想的な収率です。豆のポテンシャルと甘みが最もバランス良く表現されているポイントです。"}
+                  {ey < 18 ? (t.bench.insights?.under || "抽出不足（アンダー）の傾向です。より細かい挽き目にするか、温度を上げる、または抽出時間を延ばすことを検討してください。") :
+                   ey > 22 ? (t.bench.insights?.over || "過抽出（オーバー）の傾向です。粗めの挽き目にするか、温度を下げる、または抽出を早めに切り上げることで調整してください。") :
+                   (t.bench.insights?.ideal || "理想的な収率です。豆のポテンシャルと甘みが最もバランス良く表現されているポイントです。")}
                 </p>
               </div>
             </motion.div>
