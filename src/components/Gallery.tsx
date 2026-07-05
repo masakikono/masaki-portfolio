@@ -29,7 +29,7 @@ const GalleryItem = ({ img, index }: { img: any, index: number }) => {
     >
       <Image
         src={img.src}
-        alt="Portfolio moment"
+        alt={img.alt || "Portfolio moment"}
         fill
         className={`object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 group-hover:scale-105 ${img.position}`}
         loading="lazy"
@@ -43,12 +43,12 @@ const GalleryItem = ({ img, index }: { img: any, index: number }) => {
 
 const Gallery = () => {
   const images = [
-    { id: 1, src: "/images/laughing-outdoors.jpg", height: "h-[600px]", position: "object-[center_15%]" },
-    { id: 2, src: "/images/kaf-coffee.jpg", height: "h-[400px]", position: "object-center" },
-    { id: 3, src: "/images/laughing-laptop.jpg", height: "h-[650px]", position: "object-[center_10%]" },
-    { id: 4, src: "/images/blue-lagoon-sign.jpg", height: "h-[350px]", position: "object-center" },
-    { id: 5, src: "/images/Iceland.jpg", height: "h-[500px]", position: "object-center" },
-    { id: 6, src: "/images/blue-lagoon-drink.jpg", height: "h-[450px]", position: "object-center" },
+    { id: 1, src: "/images/laughing-outdoors.jpg", alt: "Masaki Kono laughing outdoors", height: "h-[600px]", position: "object-[center_15%]" },
+    { id: 2, src: "/images/kaf-coffee.jpg", alt: "Specialty coffee moment at a café", height: "h-[400px]", position: "object-center" },
+    { id: 3, src: "/images/laughing-laptop.jpg", alt: "Masaki Kono working on a laptop", height: "h-[650px]", position: "object-[center_10%]" },
+    { id: 4, src: "/images/blue-lagoon-sign.jpg", alt: "Masaki Kono at the Blue Lagoon sign, Iceland", height: "h-[350px]", position: "object-center" },
+    { id: 5, src: "/images/Iceland.jpg", alt: "Dramatic Icelandic landscape", height: "h-[500px]", position: "object-center" },
+    { id: 6, src: "/images/blue-lagoon-drink.jpg", alt: "Enjoying a drink at the Blue Lagoon, Iceland", height: "h-[450px]", position: "object-center" },
   ];
 
   return (
@@ -60,9 +60,9 @@ const Gallery = () => {
         viewport={{ once: true }}
         className="text-center mb-32"
       >
-        <span className="text-[10px] font-bold tracking-[0.8em] uppercase text-[#daa520] mb-6 block">Gallery</span>
+        <span className="text-[10px] font-bold tracking-[0.8em] uppercase text-[#daa520] mb-6 block">Life & Travel</span>
         <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight uppercase">
-          Portfolio
+          Gallery
         </h2>
       </motion.div>
       

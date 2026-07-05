@@ -1,8 +1,8 @@
 import Insights from "@/components/Insights";
 
 export const metadata = {
-  title: "Insights | Masaki Kono",
-  description: "Thought Leadership and Writings",
+  title: "Insights",
+  description: "Articles and thought leadership on specialty coffee, software engineering, and global living by Masaki Kono.",
 };
 
 export default function InsightsPage() {

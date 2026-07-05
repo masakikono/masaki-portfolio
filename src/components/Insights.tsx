@@ -2,7 +2,7 @@
 /* eslint-disable */
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { ArrowUpRight, BookOpen } from "lucide-react";
@@ -10,16 +10,9 @@ import { ArrowUpRight, BookOpen } from "lucide-react";
 const Insights = () => {
   const { t } = useLanguage();
   const insightsData = t.insights as any;
-  const [articles, setArticles] = useState<any[]>([]);
-
-  useEffect(() => {
-    // Initial static articles from translation
-    if (insightsData && insightsData.articles) {
-      setArticles(insightsData.articles);
-    }
-
-    // Note: We use static popular articles defined in translations.ts per user request.
-  }, [insightsData]);
+  // Render articles directly (no useEffect) so they are included in the
+  // server-rendered HTML — visible to crawlers and shown without a flash.
+  const articles: any[] = insightsData?.articles ?? [];
 
   if (!insightsData || articles.length === 0) return null;
 

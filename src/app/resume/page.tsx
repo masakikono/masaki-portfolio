@@ -38,7 +38,7 @@ export default function ResumePage() {
                 <MapPin className="w-4 h-4 text-black" /> London, UK (Available for Remote)
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-black" /> masaki.kono.contact@example.com
+                <Mail className="w-4 h-4 text-black" /> masaki19931015@gmail.com
               </div>
             </div>
           </header>

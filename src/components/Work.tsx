@@ -3,9 +3,10 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import { ArrowUpRight, Cpu } from "lucide-react";
+import { ArrowUpRight, Cpu, Code2 } from "lucide-react";
 
 const Work = () => {
   const { t } = useLanguage();
@@ -22,7 +23,7 @@ const Work = () => {
           {workData.title}
         </h2>
         <p className="text-lg md:text-xl font-light text-neutral-400 max-w-2xl mx-auto">
-          Highlighting complex engineering problem-solving.
+          {workData.subtitle || "Highlighting complex engineering problem-solving."}
         </p>
       </div>
 
@@ -127,6 +128,50 @@ const Work = () => {
            </div>
         </div>
       </div>
+
+      {/* Other Projects */}
+      {Array.isArray(workData.otherProjects) && workData.otherProjects.length > 0 && (
+        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          {workData.otherProjects.map((project: any, index: number) => {
+            const isExternal = typeof project.link === "string" && project.link.startsWith("http");
+            const CardInner = (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                className="group relative flex flex-col h-full p-10 bg-[#0a1525]/40 border border-white/5 rounded-3xl hover:border-[#daa520]/30 hover:bg-[#0a1525]/70 transition-all duration-500 backdrop-blur-xl"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-12 h-12 bg-[#daa520]/10 rounded-2xl flex items-center justify-center text-[#daa520]">
+                    <Code2 className="w-6 h-6" />
+                  </div>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-neutral-500 group-hover:text-[#daa520] group-hover:bg-[#daa520]/10 transition-all">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold tracking-widest text-[#daa520] uppercase mb-3 opacity-80">
+                  {project.role}
+                </span>
+                <h3 className="text-2xl text-white mb-4 group-hover:text-[#daa520] transition-colors">{project.name}</h3>
+                <p className="text-sm text-neutral-400 font-light leading-relaxed mb-8">{project.description}</p>
+                <span className="mt-auto text-xs font-semibold tracking-widest uppercase text-neutral-500 group-hover:text-white transition-colors">
+                  {project.linkLabel} →
+                </span>
+              </motion.div>
+            );
+            return isExternal ? (
+              <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="h-full">
+                {CardInner}
+              </a>
+            ) : (
+              <Link key={index} href={project.link} className="h-full">
+                {CardInner}
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 };

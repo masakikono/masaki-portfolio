@@ -4,11 +4,11 @@ export const translations = {
       about: "ABOUT",
       journey: "JOURNEY",
       portfolio: "PORTFOLIO",
-      bench: "APP",
+      bench: "EY CALC",
       work: "WORK",
       contact: "CONTACT",
       insights: "INSIGHTS",
-      products: "PRODUCTS"
+      products: "SERVICES"
     },
     hero: {
       title: "MASAKI KONO",
@@ -27,6 +27,7 @@ export const translations = {
     },
     work: {
       title: "CASE STUDIES",
+      subtitle: "コーヒー現場の課題を、エンジニアリングで解決した実例。",
       projects: {
         artera: {
           name: "ARTERA Strategist",
@@ -35,7 +36,23 @@ export const translations = {
           solution: "Vision AIを活用した画像解析機能を実装。焙煎チャートのスクリーンショットから数値を自動抽出し、AIによる改善提案を行うダッシュボードを構築。",
           result: "データ入力時間を80%削減。直感的なビジュアライゼーションにより、焙煎士の意思決定スピードが大幅に向上しました。"
         }
-      }
+      },
+      otherProjects: [
+        {
+          name: "EY Calculator",
+          role: "Design & Development (Next.js / React)",
+          description: "豆量・抽出量・TDSから抽出収率（Extraction Yield）を即時計算するバリスタ向けWebツール。現場の抽出調整を科学的にサポートします。",
+          link: "/bench",
+          linkLabel: "ツールを試す"
+        },
+        {
+          name: "This Portfolio Site",
+          role: "Design & Development (Next.js / Tailwind CSS / Three.js)",
+          description: "本サイト自体もAIを活用して設計・開発。日英2言語対応、3D演出、アニメーションを実装したフルスタックプロジェクトです。",
+          link: "https://github.com/masakikono",
+          linkLabel: "GitHubを見る"
+        }
+      ]
     },
     journey: {
       title: "CAREER JOURNEY",
@@ -65,7 +82,7 @@ export const translations = {
           description: "医療機器系外資メーカーでの営業経験。複雑な交渉サイクルやステークホルダーマネジメントを担当し、BtoBセールスの基盤を構築。この時代に培ったヒアリング能力とホスピタリティが、現在のエンジニアリングやバリスタとしてのクライアントワークにおける「顧客課題の解像度の高さ」に直結しています。"
         },
         {
-          year: "- 2016",
+          year: "〜 2016",
           location: "Japan",
           role: "University / Walking across Japan",
           description: "大学時代、徒歩での日本縦断を完遂。「やってみないとわからない」という実体験至上主義の精神を確立。"
@@ -85,15 +102,15 @@ export const translations = {
         }
     },
     products: {
-      title: "CURATED PRODUCTS",
-      content: "プロフェッショナルな抽出を支える、こだわり抜いたコーヒー器具をセレクトしています。",
+      title: "SERVICES",
+      content: "ポートレート撮影から海外移住コンサルティングまで。世界4カ国での実体験に基づいた、パーソナルなサービスを提供しています。",
       items: [
         {
           id: "portrait-photography",
           name: "ポートフォリオ撮影 (Portfolio Photography)",
           price: "¥3,000",
           description: "あなたの自然な魅力とプロフェッショナルな一面を引き出すポートレート撮影を行います。",
-          image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
+          image: "/images/laughing-outdoors.jpg",
           checkoutUrl: "mailto:masaki19931015@gmail.com?subject=ポートフォリオ撮影のご依頼",
           buttonText: "詳細を問い合わせる"
         },
@@ -102,13 +119,27 @@ export const translations = {
           name: "ワーホリ・移住コンサル相談",
           price: "¥1,500 / 30分",
           description: "海外でのワーキングホリデーや移住に関する個別コンサルティング。実体験に基づいたリアルな戦略とアドバイスを提供します。",
-          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
+          image: "/images/Iceland.jpg",
           checkoutUrl: "https://calendar.app.google/ekrsVZwBTgKx9YnV8",
           buttonText: "予約する (Google Calendar)"
         }
       ],
-      buyNow: "購入する",
-      checkoutRedirect: "Shopifyへリダイレクト中..."
+      buyNow: "申し込む",
+      checkoutRedirect: "リダイレクト中...",
+      features: [
+        {
+          title: "Real Experience",
+          description: "東京・メルボルン・オスロ・ロンドン。4カ国での就労・移住経験に基づくリアルなアドバイス。"
+        },
+        {
+          title: "Easy Booking",
+          description: "Googleカレンダーから直接予約可能。時差を考慮した柔軟なスケジュール調整に対応します。"
+        },
+        {
+          title: "Direct Communication",
+          description: "仲介なし。ご相談から実施まで、すべて本人が直接対応します。"
+        }
+      ]
     },
     insights: {
       title: "THOUGHT LEADERSHIP",
@@ -153,11 +184,11 @@ export const translations = {
       about: "ABOUT",
       journey: "JOURNEY",
       portfolio: "PORTFOLIO",
-      bench: "APP",
+      bench: "EY CALC",
       work: "WORK",
       contact: "CONTACT",
       insights: "INSIGHTS",
-      products: "PRODUCTS"
+      products: "SERVICES"
     },
     hero: {
       title: "MASAKI KONO",
@@ -172,6 +203,7 @@ export const translations = {
     },
     work: {
       title: "CASE STUDIES",
+      subtitle: "Real-world coffee problems, solved with engineering.",
       projects: {
         artera: {
           name: "ARTERA Strategist",
@@ -180,7 +212,23 @@ export const translations = {
           solution: "Implemented an image analysis function utilizing Vision AI. Built a dashboard that automatically extracts numerical data from screenshots of roasting charts and provides AI-driven improvement suggestions.",
           result: "Reduced data entry time by 80%. Intuitive visualization significantly improved the roaster's decision-making speed."
         }
-      }
+      },
+      otherProjects: [
+        {
+          name: "EY Calculator",
+          role: "Design & Development (Next.js / React)",
+          description: "A web tool for baristas that instantly calculates Extraction Yield from dose, beverage weight, and TDS — bringing scientific precision to everyday brewing.",
+          link: "/bench",
+          linkLabel: "Try the tool"
+        },
+        {
+          name: "This Portfolio Site",
+          role: "Design & Development (Next.js / Tailwind CSS / Three.js)",
+          description: "This site itself is a full-stack project designed and built with AI — featuring bilingual support, 3D visuals, and motion design.",
+          link: "https://github.com/masakikono",
+          linkLabel: "View on GitHub"
+        }
+      ]
     },
     journey: {
       title: "CAREER JOURNEY",
@@ -210,7 +258,7 @@ export const translations = {
           description: "Sales executive for an international medical device manufacturer. Managed complex negotiation cycles and stakeholder relationships, building a strong foundation in B2B sales. The deep listening skills and hospitality cultivated during this period stand at the core of my current client work as an engineer and barista, enabling high-resolution understanding of client problems."
         },
         {
-          year: "- 2016",
+          year: "Until 2016",
           location: "Japan",
           role: "University / Walking across Japan",
           description: "Completed a walking traverse of Japan during university. Established the 'practical experience first' mindset."
@@ -230,15 +278,15 @@ export const translations = {
         }
     },
     products: {
-      title: "CURATED PRODUCTS",
-      content: "Selecting high-performance coffee tools that support professional extraction and consistent quality.",
+      title: "SERVICES",
+      content: "From portrait photography to migration consulting — personal services grounded in real experience across four countries.",
       items: [
         {
           id: "portrait-photography",
           name: "Portfolio Photography",
           price: "¥3,000",
           description: "Professional portrait photography sessions to capture your natural essence and unique story.",
-          image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000&v=2",
+          image: "/images/laughing-outdoors.jpg",
           checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portfolio%20Photography%20Request",
           buttonText: "CONTACT FOR DETAILS"
         },
@@ -247,13 +295,27 @@ export const translations = {
           name: "WH & Migration Consulting",
           price: "¥1,500 / 30 mins",
           description: "1-on-1 consulting services for overseas working holidays and migration. Real advice based on authentic global experiences.",
-          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000&v=2",
+          image: "/images/Iceland.jpg",
           checkoutUrl: "https://calendar.app.google/ekrsVZwBTgKx9YnV8",
           buttonText: "BOOK A CONSULTATION"
         }
       ],
-      buyNow: "BUY NOW",
-      checkoutRedirect: "Redirecting to Shopify..."
+      buyNow: "BOOK NOW",
+      checkoutRedirect: "Redirecting...",
+      features: [
+        {
+          title: "Real Experience",
+          description: "Advice grounded in hands-on work and migration experience across Tokyo, Melbourne, Oslo, and London."
+        },
+        {
+          title: "Easy Booking",
+          description: "Book directly via Google Calendar. Flexible scheduling across time zones."
+        },
+        {
+          title: "Direct Communication",
+          description: "No middlemen. Every inquiry and session is handled personally, end to end."
+        }
+      ]
     },
     insights: {
       title: "THOUGHT LEADERSHIP",

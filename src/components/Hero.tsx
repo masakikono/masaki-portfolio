@@ -3,6 +3,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -12,13 +13,15 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: "url('/images/Iceland.jpg')",
-          backgroundPosition: "center 40%" // Adjust framing if necessary
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/Iceland.jpg"
+          alt="Icelandic landscape — the journey of Masaki Kono"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_40%]"
+        />
         {/* Overlay gradient to ensure text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/80 to-[#050a15]/60"></div>
       </div>

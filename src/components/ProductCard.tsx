@@ -56,6 +56,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           src={product.image} 
           alt={product.name}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050a15] via-transparent to-transparent opacity-60" />

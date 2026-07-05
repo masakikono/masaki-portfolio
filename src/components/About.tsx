@@ -22,7 +22,7 @@ const About = () => {
         <div className="relative w-full max-w-[440px] aspect-[3/4] overflow-hidden rounded-2xl filter brightness-90 contrast-110 shadow-2xl">
           <Image 
             src="/images/blue-lagoon-sign.jpg" 
-            alt="Masaki Kono with Coffee Cup"
+            alt="Masaki Kono at the Blue Lagoon, Iceland"
             fill
             className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 50vw"

@@ -4,7 +4,7 @@ import React from "react";
 import ProductCard from "@/components/ProductCard";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
-import { Coffee, ShoppingCart, ShieldCheck, Truck } from "lucide-react";
+import { Globe, Calendar, MessageCircle } from "lucide-react";
 
 export default function ProductsPage() {
   const { t } = useLanguage();
@@ -23,7 +23,7 @@ export default function ProductsPage() {
                 transition={{ duration: 1 }}
                 className="w-24 h-24 mb-10 rounded-full bg-[#daa520]/10 flex items-center justify-center text-[#daa520] border border-[#daa520]/20"
             >
-                <Coffee className="w-10 h-10" />
+                <Globe className="w-10 h-10" />
             </motion.div>
             
             <motion.h1 
@@ -55,31 +55,23 @@ export default function ProductsPage() {
         </div>
 
         {/* Trust/Feature Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24 max-w-6xl mx-auto">
-            <div className="flex flex-col items-center text-center">
-                <div className="p-4 rounded-2xl bg-white/5 mb-6">
-                    <ShieldCheck className="w-8 h-8 text-[#daa520]" />
+        {Array.isArray(productsData.features) && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-24 max-w-6xl mx-auto">
+            {productsData.features.map((feature: any, index: number) => {
+              const icons = [Globe, Calendar, MessageCircle];
+              const Icon = icons[index % icons.length];
+              return (
+                <div key={index} className="flex flex-col items-center text-center">
+                  <div className="p-4 rounded-2xl bg-white/5 mb-6">
+                    <Icon className="w-8 h-8 text-[#daa520]" />
+                  </div>
+                  <h4 className="text-white font-semibold mb-3 tracking-widest text-xs uppercase">{feature.title}</h4>
+                  <p className="text-sm text-neutral-500 font-light">{feature.description}</p>
                 </div>
-                <h4 className="text-white font-semibold mb-3 tracking-widest text-xs uppercase">Secure Checkout</h4>
-                <p className="text-sm text-neutral-500 font-light">Payments powered by Shopify for maximum security and peace of mind.</p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center">
-                <div className="p-4 rounded-2xl bg-white/5 mb-6">
-                    <Truck className="w-8 h-8 text-[#daa520]" />
-                </div>
-                <h4 className="text-white font-semibold mb-3 tracking-widest text-xs uppercase">Global Logistics</h4>
-                <p className="text-sm text-neutral-500 font-light">Worldwide shipping from London and Tokyo. Tracking included with every order.</p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center">
-                <div className="p-4 rounded-2xl bg-white/5 mb-6">
-                    <ShoppingCart className="w-8 h-8 text-[#daa520]" />
-                </div>
-                <h4 className="text-white font-semibold mb-3 tracking-widest text-xs uppercase">Direct Sourcing</h4>
-                <p className="text-sm text-neutral-500 font-light">We work directly with makers and roasters to bring you the finest quality gear.</p>
-            </div>
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </main>
   );
