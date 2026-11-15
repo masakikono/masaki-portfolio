@@ -21,14 +21,15 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   React.useEffect(() => {
     setMounted(true);
     if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("mk_portfolio_lang") as Language | null;
+      let stored: Language | null = null;
+      try { stored = localStorage.getItem("mk_portfolio_lang") as Language | null; } catch { /* Storage may be disabled. */ }
       if (stored === "ja" || stored === "en") {
         setLangState(stored);
       } else {
         // Auto-detect browser language
         const browserLang = navigator.language.startsWith("ja") ? "ja" : "en";
         setLangState(browserLang);
-        localStorage.setItem("mk_portfolio_lang", browserLang);
+        try { localStorage.setItem("mk_portfolio_lang", browserLang); } catch { /* Language switching still works in memory. */ }
       }
     }
   }, []);
@@ -36,7 +37,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   const setLang = (newLang: Language) => {
     setLangState(newLang);
     if (typeof window !== "undefined") {
-      localStorage.setItem("mk_portfolio_lang", newLang);
+      try { localStorage.setItem("mk_portfolio_lang", newLang); } catch { /* Language switching still works in memory. */ }
     }
   };
 
