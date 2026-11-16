@@ -11,7 +11,7 @@ const Header = () => {
   const navItems = [
     { label: t.nav.about, href: "/" },
     { label: t.nav.journey, href: "/journey" },
-    { label: t.nav.bench, href: "/bench" },
+    { label: t.nav.tools, href: "/coffee-tools" },
     { label: t.nav.portfolio, href: "/portfolio" },
     { label: t.nav.products as string, href: "/products" },
     { label: t.nav.insights as string, href: "/insights" },
