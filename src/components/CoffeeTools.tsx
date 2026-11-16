@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Calculator, Timer } from "lucide-react";
+import { ArrowUpRight, Calculator, Coffee, Timer } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function CoffeeTools() {
@@ -18,6 +18,11 @@ export default function CoffeeTools() {
       subtitle: "DEVELOPMENT TIME RATIO",
       description: jp ? "1ハゼを記録し、焙煎時間とDTRをリアルタイムに確認。履歴保存とCSV出力にも対応。" : "Log first crack and track roast time and DTR live. Keep a local journal and export CSV.",
     },
+    {
+      href: "/brew-advisor", icon: Coffee, number: "03", title: jp ? "ハンドドリップ味の改善" : "Brew Taste Advisor",
+      subtitle: "BREW TASTE ADVISOR",
+      description: jp ? "味の感想から、次の一杯で試せる改善案を2〜3個提案。粉量と湯量も入力できます。" : "Describe your cup and get 2–3 practical brewing adjustments to try next.",
+    },
   ];
 
   return (
@@ -30,14 +35,14 @@ export default function CoffeeTools() {
             {jp ? "抽出と焙煎の判断を支える、小さなデジタルツール。無料・登録不要で使えます。" : "Simple tools for thoughtful brewing and roasting. Free to use, with no account required."}
           </p>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map(tool => {
             const Icon = tool.icon;
             return (
               <Link href={tool.href} key={tool.href} className="group flex flex-col rounded-3xl border border-white/10 bg-[#0a1525] p-7 md:p-9 min-h-[310px] hover:border-[#daa520]/50 hover:bg-[#101e31] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#daa520]">
                 <div className="flex justify-between items-start mb-12">
                   <span className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#daa520]/10 text-[#daa520]"><Icon size={27} strokeWidth={1.5} aria-hidden="true" /></span>
-                  <span className="text-xs font-mono text-neutral-500">{tool.number} / 02</span>
+                  <span className="text-xs font-mono text-neutral-500">{tool.number} / 03</span>
                 </div>
                 <p className="text-[10px] tracking-[0.18em] text-[#daa520] mb-3">{tool.subtitle}</p>
                 <h2 className="text-2xl text-white mb-3 font-light">{tool.title}</h2>
