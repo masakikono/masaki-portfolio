@@ -134,7 +134,7 @@ export default function RoastTimer() {
   return (
     <main className={styles.root} lang={jp ? "ja" : "en"}>
       <div className={styles.container}>
-        <Link href="/products" className={styles.back}><ArrowLeft size={14} /> SERVICES</Link>
+        <Link href="/coffee-tools" className={styles.back}><ArrowLeft size={14} /> COFFEE TOOLS</Link>
         <div className={styles.heading}>
           <div><p className={styles.eyebrow}>STORK / COFFEE TOOLS</p><h1>Roast Timer<span>{text("焙煎の時間を、見える形に。", "Make every moment of your roast count.")}</span></h1><p>{text("アウベルクラフトなど、手動焙煎のためのDTRタイマー。", "A development-time companion for hands-on coffee roasting.")}</p></div>
           <span className={styles.badge}>{text("無料 · ログイン不要", "FREE · NO SIGN-IN")}</span>

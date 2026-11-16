@@ -4,7 +4,7 @@ export const translations = {
       about: "ABOUT",
       journey: "JOURNEY",
       portfolio: "PORTFOLIO",
-      bench: "EY CALC",
+      tools: "COFFEE TOOLS",
       work: "WORK",
       contact: "CONTACT",
       insights: "INSIGHTS",
@@ -103,15 +103,15 @@ export const translations = {
     },
     products: {
       title: "SERVICES",
-      content: "ポートレート撮影から海外移住コンサルティングまで。世界4カ国での実体験に基づいた、パーソナルなサービスを提供しています。",
+      content: "ポートレート撮影とワーホリ・移住相談。実体験を生かした2つのサービスです。",
       items: [
         {
           id: "portrait-photography",
-          name: "ポートフォリオ撮影 (Portfolio Photography)",
+          name: "ポートレート撮影",
           price: "¥3,000",
           description: "あなたの自然な魅力とプロフェッショナルな一面を引き出すポートレート撮影を行います。",
           image: "/images/laughing-outdoors.jpg",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=ポートフォリオ撮影のご依頼",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=ポートレート撮影のご依頼",
           buttonText: "詳細を問い合わせる"
         },
         {
@@ -184,7 +184,7 @@ export const translations = {
       about: "ABOUT",
       journey: "JOURNEY",
       portfolio: "PORTFOLIO",
-      bench: "EY CALC",
+      tools: "COFFEE TOOLS",
       work: "WORK",
       contact: "CONTACT",
       insights: "INSIGHTS",
@@ -283,11 +283,11 @@ export const translations = {
       items: [
         {
           id: "portrait-photography",
-          name: "Portfolio Photography",
+          name: "Portrait Photography",
           price: "¥3,000",
           description: "Professional portrait photography sessions to capture your natural essence and unique story.",
           image: "/images/laughing-outdoors.jpg",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portfolio%20Photography%20Request",
+          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portrait%20Photography%20Request",
           buttonText: "CONTACT FOR DETAILS"
         },
         {
