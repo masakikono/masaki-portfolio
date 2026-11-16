@@ -2,7 +2,6 @@
 
 import React from "react";
 import ProductCard from "@/components/ProductCard";
-import RoastTimerService from "@/components/RoastTimerService";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import { Globe, Calendar, MessageCircle } from "lucide-react";
@@ -47,8 +46,6 @@ export default function ProductsPage() {
             {/* Subtle background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#daa520]/5 rounded-full blur-[120px] -z-10" />
         </section>
-
-        <RoastTimerService />
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-5xl mx-auto mb-40">
