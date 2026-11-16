@@ -21,7 +21,7 @@ export default function CoffeeTools() {
     {
       href: "/brew-advisor", icon: Coffee, number: "03", title: jp ? "ハンドドリップ味の改善" : "Brew Taste Advisor",
       subtitle: "BREW TASTE ADVISOR",
-      description: jp ? "味の感想から、次の一杯で試せる改善案を2〜3個提案。粉量と湯量も入力できます。" : "Describe your cup and get 2–3 practical brewing adjustments to try next.",
+      description: jp ? "味の感想、酸味・甘味・苦味、挽き目から、次の一杯で試す改善案を2〜3個提案。" : "Describe taste, flavor balance and grind to get 2–3 ideas for your next brew.",
     },
   ];
 
