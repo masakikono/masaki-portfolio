@@ -24,7 +24,7 @@ const About = () => {
             src="/images/blue-lagoon-sign.jpg" 
             alt="Masaki Kono at the Blue Lagoon, Iceland"
             fill
-            className="object-cover object-center"
+            className="object-contain object-center bg-[#0a1525]"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
@@ -46,6 +46,22 @@ const About = () => {
           </p>
         </div>
         
+        <div className="mt-12 w-full text-left">
+          <h3 className="text-sm font-semibold tracking-widest text-[#daa520] mb-6">{lang === "ja" ? "専門性・スキル" : "Expertise & skills"}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {(lang === "ja" ? [
+              ["コーヒー", "焙煎、品質管理、カッピング、抽出。Diedrich、IKAWA、Cropsterの実務経験。"],
+              ["法人営業・事業開発", "B2B営業、卸売、英国市場開拓、顧客折衝。"],
+              ["国際経験", "日本・豪州・ノルウェー・英国での勤務。日本語・英語。"],
+              ["テクノロジー", "Next.js、React、AIを活用したコーヒー向けWebツール開発。"]
+            ] : [
+              ["Coffee expertise", "Roasting, quality control, cupping and brewing. Experience with Diedrich, IKAWA and Cropster."],
+              ["Business development", "B2B sales, wholesale, UK market development and client relationships."],
+              ["International experience", "Work experience in Japan, Australia, Norway and the UK. Japanese and English."],
+              ["Technology", "Next.js, React and AI-assisted coffee web tool development."]
+            ]).map(([title, description]) => <div key={title} className="p-5 rounded-xl border border-white/10 bg-white/5"><h4 className="text-white font-medium mb-3">{title}</h4><p className="text-sm text-neutral-400 leading-relaxed">{description}</p></div>)}
+          </div>
+        </div>
         <Activity />
       </motion.div>
     </section>
