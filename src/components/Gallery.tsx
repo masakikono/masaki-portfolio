@@ -2,9 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const GalleryItem = ({ img, index }: { img: any, index: number }) => {
+const GalleryItem = ({ img, index, onOpen }: { img: any, index: number, onOpen: () => void }) => {
   const { scrollYProgress } = useScroll();
   const [isMobile, setIsMobile] = React.useState(true);
   
@@ -19,7 +20,7 @@ const GalleryItem = ({ img, index }: { img: any, index: number }) => {
   const y = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : (index % 2 === 0 ? -40 : 40)]);
 
   return (
-    <motion.div 
+    <motion.button type="button" aria-label={img.alt} onClick={onOpen}
       style={{ y }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -37,11 +38,14 @@ const GalleryItem = ({ img, index }: { img: any, index: number }) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       <div className="absolute top-10 right-10 w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-[#daa520] transition-colors duration-500" />
-    </motion.div>
+    </motion.button>
   );
 };
 
 const Gallery = () => {
+  const { lang } = useLanguage();
+  const dialog = React.useRef<HTMLDialogElement>(null);
+  const [selected, setSelected] = React.useState<{src: string; alt: string} | null>(null);
   const images = [
     { id: 1, src: "/images/laughing-outdoors.jpg", alt: "Masaki Kono laughing outdoors", height: "h-[600px]", position: "object-[center_15%]" },
     { id: 2, src: "/images/kaf-coffee.jpg", alt: "Specialty coffee moment at a café", height: "h-[400px]", position: "object-center" },
@@ -68,13 +72,14 @@ const Gallery = () => {
       
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-10 space-y-10">
         {images.map((img, index) => (
-          <GalleryItem key={img.id} img={img} index={index} />
+          <GalleryItem key={img.id} img={img} index={index} onOpen={() => { setSelected(img); dialog.current?.showModal(); }} />
         ))}
       </div>
 
-      <div className="mt-48 text-center opacity-10">
-         <span className="text-[10px] font-bold tracking-[1.5em] text-white uppercase">Archive 2024</span>
-      </div>
+      <dialog ref={dialog} onClose={() => setSelected(null)} onClick={e => { if (e.target === e.currentTarget) e.currentTarget.close(); }} className="fixed inset-0 m-auto w-[95vw] max-w-5xl bg-[#050a15] text-white rounded-xl p-4 backdrop:bg-black/85">
+        <button type="button" onClick={() => dialog.current?.close()} className="block ml-auto mb-2 p-2 text-white">{lang === "ja" ? "閉じる ×" : "Close ×"}</button>
+        {selected && <div className="relative h-[72vh] w-full"><Image src={selected.src} alt={selected.alt} fill sizes="95vw" className="object-contain" /></div>}
+      </dialog>
     </section>
   );
 };
