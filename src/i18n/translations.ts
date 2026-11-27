@@ -12,7 +12,7 @@ export const translations = {
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Coffee Professional / AI Strategist / Traveler",
+      subtitle: "Coffee · Business · Technology",
       tagline: "Specialty Coffee, Strategic Sales, and AI Innovation.",
       valueProp: "ロンドン仕込みのホスピタリティと、AIを活用した戦略設計。珈琲と技術を横断し、価値を創造する。",
       scroll: "SCROLL"
@@ -34,7 +34,7 @@ export const translations = {
           role: "Frontend Developer (Next.js / AI Integration)",
           problem: "コーヒー焙煎のデータ分析が手動で煩雑であり、再現性の高いプロファイル作成に時間がかかっていた。",
           solution: "Vision AIを活用した画像解析機能を実装。焙煎チャートのスクリーンショットから数値を自動抽出し、AIによる改善提案を行うダッシュボードを構築。",
-          result: "データ入力時間を80%削減。直感的なビジュアライゼーションにより、焙煎士の意思決定スピードが大幅に向上しました。"
+          result: "焙煎データの入力と分析を効率化することを目的としたプロトタイプ。定量的な効果は未検証。"
         }
       },
       otherProjects: [
@@ -49,7 +49,7 @@ export const translations = {
           name: "This Portfolio Site",
           role: "Design & Development (Next.js / Tailwind CSS / Three.js)",
           description: "本サイト自体もAIを活用して設計・開発。日英2言語対応、3D演出、アニメーションを実装したフルスタックプロジェクトです。",
-          link: "https://github.com/masakikono",
+          link: "https://github.com/masakikono/masaki-portfolio",
           linkLabel: "GitHubを見る"
         }
       ]
@@ -58,10 +58,10 @@ export const translations = {
       title: "CAREER JOURNEY",
       items: [
         {
-          year: "2025 - PRESENT",
+          year: "2025 - 2026.10",
           location: "London, UK",
           role: "Senior Barista & Roaster",
-          description: "La Tostadora にてシニアバリスタ兼ロースターとして勤務。現場の抽出と焙煎の両面から、ロンドンのコーヒーシーンの最前線を支える。また、2026年よりコーヒードリッパー「BEANDY」の代理店営業としての活動も開始。"
+          description: "Old Spike、la tostadora などで勤務し、焙煎・抽出・品質管理を経験。BEANDYの代理店営業として英国市場を開拓し、英国初の卸売成約を実現。2026年10月に日本へ帰国。"
         },
         {
           year: "2024",
@@ -74,6 +74,12 @@ export const translations = {
           location: "Melbourne, Australia",
           role: "Barista",
           description: "Axil Coffee Roasters にて勤務。世界最高峰のカフェ文化の中で、秒単位の調整が求められる高密度なサービスを経験。スピードとクオリティを極限まで両立させる技術とともに、多様なバックグラウンドを持つ顧客へのホスピタリティの本質を学びました。"
+        },
+        {
+          year: "2019 - 2022",
+          location: "Tokyo, Japan",
+          role: "Barista / Trainer",
+          description: "スターバックス リザーブ ロースタリー東京でバリスタ・トレーナーとして勤務。初年度は週末勤務と平日のエンジニア業務を兼務し、その後コーヒー業務に専念。"
         },
         {
           year: "2016 - 2019",
@@ -111,7 +117,7 @@ export const translations = {
           price: "¥3,000",
           description: "あなたの自然な魅力とプロフェッショナルな一面を引き出すポートレート撮影を行います。",
           image: "/images/laughing-outdoors.jpg",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=ポートレート撮影のご依頼",
+          checkoutUrl: "/contact?service=portrait#inquiry",
           buttonText: "詳細を問い合わせる"
         },
         {
@@ -192,7 +198,7 @@ export const translations = {
     },
     hero: {
       title: "MASAKI KONO",
-      subtitle: "Coffee Professional / AI Strategist / Traveler",
+      subtitle: "Coffee · Business · Technology",
       tagline: "Specialty Coffee. Strategic Sales. AI Innovation.",
       valueProp: "Bridging world-class hospitality and AI-driven architecture. Designing premium experiences that transcend physical and digital boundaries.",
       scroll: "SCROLL"
@@ -210,7 +216,7 @@ export const translations = {
           role: "Frontend Developer (Next.js / AI Integration)",
           problem: "Coffee roast data analysis was manual and cumbersome, making it time-consuming to recreate high-reproducibility profiles.",
           solution: "Implemented an image analysis function utilizing Vision AI. Built a dashboard that automatically extracts numerical data from screenshots of roasting charts and provides AI-driven improvement suggestions.",
-          result: "Reduced data entry time by 80%. Intuitive visualization significantly improved the roaster's decision-making speed."
+          result: "A prototype designed to streamline roast data entry and analysis. Quantitative impact has not been verified."
         }
       },
       otherProjects: [
@@ -225,7 +231,7 @@ export const translations = {
           name: "This Portfolio Site",
           role: "Design & Development (Next.js / Tailwind CSS / Three.js)",
           description: "This site itself is a full-stack project designed and built with AI — featuring bilingual support, 3D visuals, and motion design.",
-          link: "https://github.com/masakikono",
+          link: "https://github.com/masakikono/masaki-portfolio",
           linkLabel: "View on GitHub"
         }
       ]
@@ -234,10 +240,10 @@ export const translations = {
       title: "CAREER JOURNEY",
       items: [
         {
-          year: "2025 - PRESENT",
+          year: "2025 - 2026.10",
           location: "London, UK",
           role: "Senior Barista & Roaster",
-          description: "Working as a Senior Barista and Roaster at La Tostadora in London, supporting the city's vibrant coffee scene from both the bar and the roastery. Also starting activities as a sales agent for the coffee dripper 'BEANDY' from 2026."
+          description: "Worked at Old Spike and la tostadora in London, gaining experience in roasting, brewing and quality control. Developed the UK market for BEANDY as a sales agent and secured its first UK wholesale order. Returned to Japan in October 2026."
         },
         {
           year: "2024",
@@ -250,6 +256,12 @@ export const translations = {
           location: "Melbourne, Australia",
           role: "Barista",
           description: "Worked at Axil Coffee Roasters. Experienced high-density service requiring second-by-second adjustments in the world's most sophisticated coffee culture. Learned the essence of hospitality for diverse backgrounds while mastering the balance of extreme speed and quality."
+        },
+        {
+          year: "2019 - 2022",
+          location: "Tokyo, Japan",
+          role: "Barista / Trainer",
+          description: "Worked at Starbucks Reserve Roastery Tokyo as a barista and trainer. Combined weekend barista work with weekday engineering work during the first year before moving into coffee full-time."
         },
         {
           year: "2016 - 2019",
@@ -287,7 +299,7 @@ export const translations = {
           price: "¥3,000",
           description: "Professional portrait photography sessions to capture your natural essence and unique story.",
           image: "/images/laughing-outdoors.jpg",
-          checkoutUrl: "mailto:masaki19931015@gmail.com?subject=Portrait%20Photography%20Request",
+          checkoutUrl: "/contact?service=portrait#inquiry",
           buttonText: "CONTACT FOR DETAILS"
         },
         {
