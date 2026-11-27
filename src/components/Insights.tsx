@@ -8,7 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 
 const Insights = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const insightsData = t.insights as any;
   // Render articles directly (no useEffect) so they are included in the
   // server-rendered HTML — visible to crawlers and shown without a flash.
@@ -23,6 +23,12 @@ const Insights = () => {
         <p className="text-lg md:text-xl font-light text-neutral-400 max-w-2xl mx-auto">{insightsData.content}</p>
       </div>
 
+      <a href="https://substack.com/@masakikono" target="_blank" rel="noopener noreferrer" className="mb-12 w-full max-w-6xl rounded-2xl border border-[#daa520]/30 bg-[#0a1525]/40 p-8 hover:border-[#daa520]">
+        <span className="text-xs tracking-widest text-[#daa520]">SUBSTACK</span>
+        <h3 className="mt-3 text-2xl text-white">{lang === "ja" ? "焙煎ノート・発信はこちら" : "Roasting notes & writing"}</h3>
+        <span className="mt-4 inline-flex gap-2 text-neutral-300">{lang === "ja" ? "Substackプロフィールを見る" : "View my Substack profile"} <ArrowUpRight className="w-4 h-4" /></span>
+      </a>
+      <h3 className="mb-6 text-sm tracking-widest text-neutral-400">{lang === "ja" ? "過去の記事（note）" : "Article archive (note)"}</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
         {articles.map((article: any, index: number) => (
           <motion.a
