@@ -1,24 +1,23 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    
-    // Add the API key securely on the server side
-    data.access_key = process.env.WEB3FORMS_KEY;
-
+    if (!data || typeof data !== "object" || data.botcheck) return NextResponse.json({ success: false }, { status: 400 });
+    const { name, email, subject, message } = data;
+    if (![name, email, subject, message].every(v => typeof v === "string" && v.trim()) || name.length > 100 || email.length > 254 || subject.length > 200 || message.length > 5000 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ success: false }, { status: 400 });
+    }
+    if (!process.env.WEB3FORMS_KEY) return NextResponse.json({ success: false }, { status: 503 });
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { 
-        "Content-Type": "application/json", 
-        Accept: "application/json" 
-      },
-      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ access_key: process.env.WEB3FORMS_KEY, name, email, subject, message }),
     });
-
     const result = await response.json();
-    return NextResponse.json(result);
-  } catch (error) {
-    return NextResponse.json({ success: false, message: "Server error" }, { status: 500 });
+    const success = response.ok && result.success === true;
+    return NextResponse.json({ success }, { status: success ? 200 : 502 });
+  } catch {
+    return NextResponse.json({ success: false }, { status: 500 });
   }
 }
