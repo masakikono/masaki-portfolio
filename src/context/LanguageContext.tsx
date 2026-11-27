@@ -41,6 +41,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  React.useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   const t = translations[lang];
 
   // Prevent hydration mismatch by not rendering content that depends on language until mounted
