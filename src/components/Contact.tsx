@@ -9,7 +9,10 @@ import { Calendar, Download, Mail } from "lucide-react";
 import { PopupModal } from "react-calendly";
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const ja = lang === "ja";
+  const [subject, setSubject] = useState("");
+  React.useEffect(() => { if (new URLSearchParams(window.location.search).get("service") === "portrait") setSubject(ja ? "ポートレート撮影のご依頼" : "Portrait photography request"); }, [ja]);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
@@ -27,7 +30,8 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
 
-      if (response.status === 200) { setStatus("success"); } 
+      const result = await response.json();
+      if (response.ok && result.success === true) { setStatus("success"); } 
       else { setStatus("error"); }
     } catch (error) {
       setStatus("error");
@@ -46,7 +50,7 @@ const Contact = () => {
       {/* Contact Options */}
       <div className="w-full max-w-3xl border border-white/10 bg-white/5 rounded-2xl p-8 md:p-12 backdrop-blur-sm mx-auto mb-24 flex flex-col items-center">
         <p className="text-sm font-light text-neutral-400 mb-8 leading-relaxed text-center">
-          コンサルティングのご依頼やカジュアル面談のご予約は、<br className="hidden md:block" />以下のカレンダーより直接日時をご指定いただけます。
+          {ja ? "コンサルティングやカジュアル面談は、カレンダーから直接ご予約いただけます。" : "Book a consultation or discovery call directly using the calendar below."}
         </p>
 
         {/* Primary CTA: Book a Meeting (Google Calendar) */}
@@ -111,6 +115,20 @@ const Contact = () => {
             </span>
           </a>
         </div>
+      </div>
+      <div id="inquiry" className="w-full max-w-3xl scroll-mt-24 text-left border border-white/10 rounded-2xl p-6 md:p-10">
+        <h3 className="text-2xl text-white mb-4">{ja ? "お問い合わせ" : "Send an inquiry"}</h3>
+        <a className="text-[#daa520] break-all underline" href="mailto:masaki19931015@gmail.com">masaki19931015@gmail.com</a>
+        <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
+          <label>{ja ? "お名前" : "Name"}<input required name="name" maxLength={100} autoComplete="name" className="block w-full rounded-lg p-3 mt-1 bg-white/5 border border-white/20" /></label>
+          <label>{ja ? "メールアドレス" : "Email"}<input required type="email" name="email" maxLength={254} autoComplete="email" className="block w-full rounded-lg p-3 mt-1 bg-white/5 border border-white/20" /></label>
+          <label>{ja ? "件名" : "Subject"}<input required name="subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={200} className="block w-full rounded-lg p-3 mt-1 bg-white/5 border border-white/20" /></label>
+          <label>{ja ? "ご相談内容" : "Message"}<textarea required name="message" rows={5} maxLength={5000} className="block w-full rounded-lg p-3 mt-1 bg-white/5 border border-white/20" /></label>
+          <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" hidden />
+          <p className="text-xs text-neutral-400">{ja ? "入力情報はお問い合わせへの返信に使用し、送信処理にはWeb3Formsを利用します。" : "Your information is used to respond to your inquiry. Submission is processed by Web3Forms."}</p>
+          <button disabled={status === "submitting"} className="bg-[#daa520] text-[#050a15] rounded-lg py-4 font-semibold disabled:opacity-50">{status === "submitting" ? (ja ? "送信中" : "Sending") : (ja ? "送信する" : "Send inquiry")}</button>
+          <p role="status" className="text-sm text-neutral-300">{status === "success" ? (ja ? "送信しました。" : "Your inquiry was sent.") : status === "error" ? (ja ? "送信できませんでした。上記メールアドレスへ直接ご連絡ください。" : "Unable to send. Please email me directly using the address above.") : ""}</p>
+        </form>
       </div>
     </section>
   );
