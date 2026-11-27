@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://masaki-portfolio.vercel.app"),
   title: {
-    default: "Masaki Kono | Coffee Professional & AI Developer",
+    default: "Masaki Kono | Coffee Professional | Business & Technology",
     template: "%s | Masaki Kono",
   },
-  description: "Personal portfolio of Masaki Kono. Seamlessly bridging world-class specialty coffee, B2B sales experience, and AI-driven software development.",
+  description: "Personal portfolio of Masaki Kono. Specialty coffee, roasting, quality control, international B2B sales and AI-assisted tool development.",
 };
 
 const jsonLd = {
@@ -31,8 +31,8 @@ const jsonLd = {
   "@type": "Person",
   name: "Masaki Kono",
   url: "https://masaki-portfolio.vercel.app",
-  jobTitle: "Coffee Professional & AI Developer",
-  workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" } },
+  jobTitle: "Coffee Professional | Business & Technology",
+  workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: "JP" } },
   sameAs: [
     "https://github.com/masakikono",
     "https://www.linkedin.com/in/masakikono19931015/",
