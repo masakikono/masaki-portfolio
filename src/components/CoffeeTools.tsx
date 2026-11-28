@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Calculator, Coffee, Timer } from "lucide-react";
+import { ArrowUpRight, BookOpen, Calculator, Coffee, Timer } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function CoffeeTools() {
@@ -23,6 +23,12 @@ export default function CoffeeTools() {
       subtitle: "BREW TASTE ADVISOR",
       description: jp ? "味の感想、酸味・甘味・苦味、挽き目から、次の一杯で試す改善案を2〜3個提案。" : "Describe taste, flavor balance and grind to get 2–3 ideas for your next brew.",
     },
+    {
+      href: "https://masaki-cupping-journal.masaki19931015.chatgpt.site/", icon: BookOpen, number: "04", external: true, private: true,
+      title: jp ? "カッピング記録" : "Cup Journal",
+      subtitle: "CUPPING JOURNAL · PRIVATE BETA",
+      description: jp ? "同じ豆の香味をロット・焙煎日ごとに記録して比較。現在は本人専用の非公開試作です。" : "Record and compare sensory notes by lot and roast date. An owner-only private prototype for now.",
+    },
   ];
 
   return (
@@ -32,22 +38,22 @@ export default function CoffeeTools() {
           <p className="text-[#daa520] text-[10px] tracking-[0.28em] mb-5">MADE FOR THE CRAFT</p>
           <h1 className="text-4xl md:text-6xl text-white font-light tracking-tight mb-5">COFFEE TOOLS</h1>
           <p className="text-neutral-400 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">
-            {jp ? "抽出と焙煎の判断を支える、小さなデジタルツール。無料・登録不要で使えます。" : "Simple tools for thoughtful brewing and roasting. Free to use, with no account required."}
+            {jp ? "抽出・焙煎の無料ツールと、非公開試作中のカッピング記録アプリ。" : "Free brewing and roasting tools, plus a private cupping journal prototype."}
           </p>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {tools.map(tool => {
             const Icon = tool.icon;
             return (
-              <Link href={tool.href} key={tool.href} className="group flex flex-col rounded-3xl border border-white/10 bg-[#0a1525] p-7 md:p-9 min-h-[310px] hover:border-[#daa520]/50 hover:bg-[#101e31] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#daa520]">
+              <Link href={tool.href} key={tool.href} target={tool.external ? "_blank" : undefined} rel={tool.external ? "noopener noreferrer" : undefined} className="group flex flex-col rounded-3xl border border-white/10 bg-[#0a1525] p-7 md:p-9 min-h-[310px] hover:border-[#daa520]/50 hover:bg-[#101e31] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#daa520]">
                 <div className="flex justify-between items-start mb-12">
                   <span className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#daa520]/10 text-[#daa520]"><Icon size={27} strokeWidth={1.5} aria-hidden="true" /></span>
-                  <span className="text-xs font-mono text-neutral-500">{tool.number} / 03</span>
+                  <span className="text-xs font-mono text-neutral-500">{tool.number} / {String(tools.length).padStart(2, "0")}</span>
                 </div>
                 <p className="text-[10px] tracking-[0.18em] text-[#daa520] mb-3">{tool.subtitle}</p>
                 <h2 className="text-2xl text-white mb-3 font-light">{tool.title}</h2>
                 <p className="text-sm text-neutral-400 font-light leading-relaxed mb-7">{tool.description}</p>
-                <span className="mt-auto flex items-center gap-2 text-sm text-[#daa520] group-hover:gap-3 transition-all">{jp ? "ツールを使う" : "Open tool"}<ArrowUpRight size={17} aria-hidden="true" /></span>
+                <span className="mt-auto flex items-center gap-2 text-sm text-[#daa520] group-hover:gap-3 transition-all">{tool.private ? (jp ? "非公開版を開く" : "Open private beta") : (jp ? "ツールを使う" : "Open tool")}<ArrowUpRight size={17} aria-hidden="true" /></span>
               </Link>
             );
           })}
