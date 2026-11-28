@@ -3,7 +3,7 @@ import CoffeeTools from "@/components/CoffeeTools";
 
 export const metadata: Metadata = {
   title: "Coffee Tools",
-  description: "Free coffee tools by Masaki Kono: extraction yield calculator, live roast timer and hand-drip taste advisor. No account required.",
+  description: "Coffee tools by Masaki Kono: free extraction yield calculator, roast timer, brew taste advisor, and an owner-only cupping journal prototype.",
   alternates: { canonical: "/coffee-tools" },
 };
 
