@@ -24,10 +24,10 @@ export default function CoffeeTools() {
       description: jp ? "味の感想、酸味・甘味・苦味、挽き目から、次の一杯で試す改善案を2〜3個提案。" : "Describe taste, flavor balance and grind to get 2–3 ideas for your next brew.",
     },
     {
-      href: "https://masaki-cupping-journal.masaki19931015.chatgpt.site/", icon: BookOpen, number: "04", external: true, private: true,
+      href: "https://masaki-cupping-journal.masaki19931015.chatgpt.site/", icon: BookOpen, number: "04", external: true, requiresSignIn: true,
       title: jp ? "カッピング記録" : "Cup Journal",
-      subtitle: "CUPPING JOURNAL · PRIVATE BETA",
-      description: jp ? "同じ豆の香味をロット・焙煎日ごとに記録して比較。現在は本人専用の非公開試作です。" : "Record and compare sensory notes by lot and roast date. An owner-only private prototype for now.",
+      subtitle: "CUPPING JOURNAL",
+      description: jp ? "同じ豆の香味をロット・焙煎日ごとに記録して比較。ChatGPTログイン後に利用できます。" : "Record and compare sensory notes by lot and roast date. Sign in with ChatGPT to save your own entries.",
     },
   ];
 
@@ -38,7 +38,7 @@ export default function CoffeeTools() {
           <p className="text-[#daa520] text-[10px] tracking-[0.28em] mb-5">MADE FOR THE CRAFT</p>
           <h1 className="text-4xl md:text-6xl text-white font-light tracking-tight mb-5">COFFEE TOOLS</h1>
           <p className="text-neutral-400 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">
-            {jp ? "抽出・焙煎の無料ツールと、非公開試作中のカッピング記録アプリ。" : "Free brewing and roasting tools, plus a private cupping journal prototype."}
+            {jp ? "抽出・焙煎・カッピングに使えるツール。カッピング記録にはChatGPTログインが必要です。" : "Tools for brewing, roasting and cupping. Cup Journal requires ChatGPT sign-in."}
           </p>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -53,7 +53,7 @@ export default function CoffeeTools() {
                 <p className="text-[10px] tracking-[0.18em] text-[#daa520] mb-3">{tool.subtitle}</p>
                 <h2 className="text-2xl text-white mb-3 font-light">{tool.title}</h2>
                 <p className="text-sm text-neutral-400 font-light leading-relaxed mb-7">{tool.description}</p>
-                <span className="mt-auto flex items-center gap-2 text-sm text-[#daa520] group-hover:gap-3 transition-all">{tool.private ? (jp ? "非公開版を開く" : "Open private beta") : (jp ? "ツールを使う" : "Open tool")}<ArrowUpRight size={17} aria-hidden="true" /></span>
+                <span className="mt-auto flex items-center gap-2 text-sm text-[#daa520] group-hover:gap-3 transition-all">{tool.requiresSignIn ? (jp ? "ログインして使う" : "Sign in to use") : (jp ? "ツールを使う" : "Open tool")}<ArrowUpRight size={17} aria-hidden="true" /></span>
               </Link>
             );
           })}
