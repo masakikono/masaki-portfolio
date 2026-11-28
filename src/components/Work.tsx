@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ArrowUpRight, Cpu, Code2 } from "lucide-react";
 
 const Work = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const workData = t.work as any;
 
   if (!workData || !workData.projects) return null;
@@ -54,7 +54,7 @@ const Work = () => {
                 <Cpu className="w-12 h-12 text-[#daa520]" />
               </motion.div>
               <div className="flex flex-col items-center">
-                <span className="text-[10px] tracking-[0.3em] text-[#daa520] uppercase font-bold mb-1">AI Analyzing</span>
+                <span className="text-[10px] tracking-[0.3em] text-[#daa520] uppercase font-bold mb-1">{lang === "ja" ? "解析イメージ" : "Illustrative visualization"}</span>
                 <div className="flex gap-1">
                    <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity }} className="w-1 h-1 bg-[#daa520] rounded-full"></motion.span>
                    <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity, delay: 0.2 }} className="w-1 h-1 bg-[#daa520] rounded-full"></motion.span>
@@ -101,12 +101,6 @@ const Work = () => {
 
         {/* Content */}
         <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center relative">
-           <div className="absolute top-10 right-10">
-              <div className="w-10 h-10 bg-[#daa520]/10 rounded-full flex items-center justify-center text-[#daa520]">
-                <ArrowUpRight className="w-5 h-5" />
-              </div>
-           </div>
-
            <span className="text-[10px] font-bold tracking-widest text-[#daa520] uppercase mb-4 opacity-80">
             {artera.role}
            </span>
@@ -114,15 +108,15 @@ const Work = () => {
 
            <div className="space-y-6">
              <div>
-               <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-medium">Problem</h4>
+               <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-medium">{lang === "ja" ? "課題" : "Problem"}</h4>
                <p className="text-sm text-neutral-300 font-light leading-relaxed">{artera.problem}</p>
              </div>
              <div>
-               <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-medium">Solution</h4>
+               <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-medium">{lang === "ja" ? "解決策" : "Solution"}</h4>
                <p className="text-sm text-neutral-300 font-light leading-relaxed">{artera.solution}</p>
              </div>
              <div>
-               <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-medium">Result</h4>
+               <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-medium">{lang === "ja" ? "成果・検証状況" : "Outcome & validation"}</h4>
                <p className="text-sm text-[#daa520] font-light leading-relaxed">{artera.result}</p>
              </div>
            </div>

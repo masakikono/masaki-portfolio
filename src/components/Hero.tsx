@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden">
@@ -44,6 +44,8 @@ const Hero = () => {
         >
           {t.hero.subtitle}
         </motion.p>
+        <p className="mt-6 max-w-xl text-sm md:text-base text-neutral-300 leading-relaxed">{lang === "ja" ? "東京・メルボルン・オスロ・ロンドンで培ったコーヒーの専門性と法人営業経験を、技術とビジネスにつなげる。" : "Specialty coffee and international B2B experience across Tokyo, Melbourne, Oslo and London."}</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4"><a href="/portfolio" className="bg-[#daa520] text-[#050a15] px-6 py-3 rounded-sm font-semibold text-sm">{lang === "ja" ? "実績を見る" : "Explore my work"}</a><a href="/contact" className="border border-white/40 text-white px-6 py-3 rounded-sm text-sm">{lang === "ja" ? "お問い合わせ" : "Get in touch"}</a></div>
       </div>
 
       <motion.div 

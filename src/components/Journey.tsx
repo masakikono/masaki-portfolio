@@ -61,13 +61,14 @@ export default function Journey() {
              {/* Dynamic Location Points (Simplified) */}
              <div className="absolute inset-0 z-10 w-full h-full">
                 {locations.map((loc, idx) => {
-                  const isActive = activeIndex === idx;
+                  const timelineIndex = idx >= 4 ? idx + 1 : idx;
+                  const isActive = idx === 3 ? activeIndex === 3 || activeIndex === 4 : activeIndex === timelineIndex;
                   return (
                     <div 
                       key={idx} 
                       className="absolute cursor-pointer group/marker" 
                       style={{ top: loc.top, left: loc.left }}
-                      onClick={() => handleLocationClick(idx)}
+                      onClick={() => handleLocationClick(timelineIndex)}
                     >
                       {/* Active Pulse Animation */}
                       {isActive ? (

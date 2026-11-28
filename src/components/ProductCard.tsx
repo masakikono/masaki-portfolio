@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, ArrowRight, CheckCircle2 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { ShoppingBag, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface ProductCardProps {
@@ -22,27 +21,6 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { t } = useLanguage();
-  const router = useRouter();
-  const [isRedirecting, setIsRedirecting] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
-
-  const handleBuyNow = () => {
-    if (product.disabled) return;
-
-    if (product.checkoutUrl.startsWith("http")) {
-       setIsRedirecting(true);
-       setTimeout(() => {
-          setIsRedirecting(false);
-          setIsCompleted(true);
-          window.open(product.checkoutUrl, '_blank');
-          setTimeout(() => setIsCompleted(false), 3000);
-       }, 800);
-    } else {
-       // Internal route
-       router.push(product.checkoutUrl);
-    }
-  };
-
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -78,49 +56,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {product.description}
         </p>
 
-        <button 
-          onClick={handleBuyNow}
-          disabled={product.disabled || isRedirecting}
-          className="w-full relative py-4 bg-white text-[#050a15] rounded-xl font-semibold tracking-widest uppercase text-xs overflow-hidden transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <AnimatePresence mode="wait">
-            {isRedirecting ? (
-              <motion.div 
-                key="loading"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center justify-center gap-2"
-              >
-                <div className="w-4 h-4 border-2 border-[#050a15]/20 border-t-[#050a15] rounded-full animate-spin" />
-                <span>Redirecting...</span>
-              </motion.div>
-            ) : isCompleted ? (
-              <motion.div 
-                key="completed"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center justify-center gap-2 text-emerald-600"
-              >
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Success</span>
-              </motion.div>
-            ) : (
-              <motion.div 
-                key="default"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center justify-center gap-2"
-              >
-                {product.disabled ? null : <ShoppingBag className="w-4 h-4" />}
-                <span>{product.buttonText || t.products.buyNow}</span>
-                {product.disabled ? null : <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </button>
+        {product.disabled ? (
+          <button disabled className="w-full py-4 rounded-xl bg-white/20 text-white opacity-50">{product.buttonText || t.products.buyNow}</button>
+        ) : (
+          <a href={product.checkoutUrl} target={product.checkoutUrl.startsWith("https://") ? "_blank" : undefined} rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 bg-white text-[#050a15] rounded-xl font-semibold tracking-widest uppercase text-xs hover:bg-[#daa520] focus-visible:outline-2 focus-visible:outline-[#daa520]">
+            <ShoppingBag className="w-4 h-4" />
+            {product.buttonText || t.products.buyNow}
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        )}
       </div>
 
       {/* Decorative Brand Accent */}
